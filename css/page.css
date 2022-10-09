@@ -1,0 +1,6 @@
+.contentArea{padding: 280px 0 0;}
+.contentArea > h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
+.contentArea > p{margin-bottom: 50px;}
+.contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
+.contentArea > a{width: 210px; margin-bottom: 360px;}
+
