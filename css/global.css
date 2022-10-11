@@ -1,8 +1,8 @@
 /* 폰트 */
 /* termina 폰트 */
-h1 , h2 , h3{font-family: "termina",sans-serif;}
+h1 , h2 , h3 , h4{font-family: "termina",sans-serif;}
 /* Arial 폰트 */
-a , p , small{font-family: 'Arial';}
+a , p , small , label , button{font-family: 'Arial';}
 
 /* 전체 배경색 */
 .boraPage{background-color: #150326; color: white; text-align: center;}
@@ -15,21 +15,25 @@ a , p , small{font-family: 'Arial';}
 .icon-link::after{content: ''; background: url('../images/icon-link.png') no-repeat center / cover;}
 
 /* 폰트 공통 */
-:is(h2 , h3) + p{color: rgba(255, 255, 255, 0.5);}
-:is(h2 , h3) + p span{display: block;}
+:is(h2 , h3 , h4) + p{color: rgba(255, 255, 255, 0.5);}
+p span{display: block;}
 h2 + p{font-size: 24px; line-height: 30px;}
-h3 + p{font-size: 20px; line-height: 26px; margin-bottom: 80px;}
+:is(h3 , h4) + p{font-size: 20px; line-height: 26px; margin-top: 25px;}
+h3 + p{margin-bottom: 80px;}
+/* 타이틀 크기 */
+h3{font-size: 50px; font-weight: 700;}
+h4{font-size: 28px; font-weight: 700;}
 
-h3{font-size: 50px; font-weight: 700; margin-bottom: 25px;}
-
+/* 컨텐츠 링크 공통 */
 section a{font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
 
+/* 켄턴츠 사이 간격 */
 .contentArea section{margin-bottom: 270px;}
 
 
 
 /* 해더 */
-header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0;}
+header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000;}
 header div{display: flex; justify-content: space-between; align-items: center;}
 header div h1{width: 159px;}
 header div h1 img{width: 100%;}
@@ -37,3 +41,7 @@ header div nav ul{display: flex;}
 header div nav ul li:not(:last-child){margin-right: 50px;}
 header div nav ul li a{font-size: 14px; text-transform: uppercase;}
 header div nav ul li a.icon-link::after{width: 12px; height: 12px; margin-left: 8px;}
+
+/* 푸터 */
+footer{line-height: 90px; background-color: black;}
+footer p{font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
