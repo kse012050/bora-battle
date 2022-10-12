@@ -1,124 +1,128 @@
-/* 최상단 */
-.contentArea{padding: 280px 0 0; position: relative;}
-.contentArea > h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
-.contentArea > p{margin-bottom: 50px;}
-.contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
-.contentArea > a{width: 210px; margin-bottom: 360px;}
+@media screen and (min-width : 800px) {
+    /* 최상단 */
+    .contentArea{padding: 280px 0 0; position: relative; overflow: hidden;}
+    .contentArea > *:not(section){position: relative; z-index: 101;}
+    .contentArea > h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
+    .contentArea > p{margin-bottom: 50px;}
+    .contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
+    .contentArea > a{width: 210px; margin-bottom: 360px;}
 
-/* 첫번째 SVG */
-#mask1{width: 500px; position: absolute; left: 0; top: 0;}
-.mask1{fill:#fff;}
-[class*='mask1-stroke']{stroke:#E72285;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
-.mask1-stroke1{animation-name: mask1-stroke1; stroke-dasharray:332; stroke-dashoffset:332; animation-delay: 0s;}
-.mask1-stroke2{animation-name: mask1-stroke2; stroke-dasharray:458; stroke-dashoffset:458; animation-delay: 0.3s;}
-.mask1-stroke3{animation-name: mask1-stroke3; stroke-dasharray:503; stroke-dashoffset:503; animation-delay: 0.6s;}
-@keyframes mask1-stroke1 {
-    0%{stroke-dashoffset:332;}
-    100%{stroke-dashoffset:0;}
-}
-@keyframes mask1-stroke2 {
-    0%{stroke-dashoffset:458;}
-    100%{stroke-dashoffset:0;}
-}
-@keyframes mask1-stroke3 {
-    0%{stroke-dashoffset:503;}
-    100%{stroke-dashoffset:0;}
+    /* 첫번째 SVG */
+    #mask1{width: 42.9%; position: absolute; left: 35px; top: 105px; z-index: 100;}
+    .mask1{fill:#fff;}
+    [class*='mask1-stroke']{stroke:#E72285;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+    .mask1-stroke1{animation-name: mask1-stroke1; stroke-dasharray:332; stroke-dashoffset:332; animation-delay: 0s;}
+    .mask1-stroke2{animation-name: mask1-stroke2; stroke-dasharray:458; stroke-dashoffset:458; animation-delay: 0.3s;}
+    .mask1-stroke3{animation-name: mask1-stroke3; stroke-dasharray:503; stroke-dashoffset:503; animation-delay: 0.6s;}
+    @keyframes mask1-stroke1 {
+        0%{stroke-dashoffset:332;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask1-stroke2 {
+        0%{stroke-dashoffset:458;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask1-stroke3 {
+        0%{stroke-dashoffset:503;}
+        100%{stroke-dashoffset:0;}
+    }
+
+    /* 두번째 SVG */
+    #mask2{width: 47.8%; position: absolute; right: -10.9%; top: -6%;}
+    .mask2{fill:#fff;}
+    [class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+    .mask2-stroke1{animation-name: mask2-stroke1; stroke-dasharray:547; stroke-dashoffset:547; animation-delay: 0.6s;}
+    .mask2-stroke2{animation-name: mask2-stroke2; stroke-dasharray:469; stroke-dashoffset:469; animation-delay: 0.9s;}
+    .mask2-stroke3{animation-name: mask2-stroke3; stroke-dasharray:356; stroke-dashoffset:356; animation-delay: 1.2s;}
+    @keyframes mask2-stroke1 {
+        0%{stroke-dashoffset:547;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask2-stroke2 {
+        0%{stroke-dashoffset:469;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask2-stroke3 {
+        0%{stroke-dashoffset:356;}
+        100%{stroke-dashoffset:0;}
+    }
+
+    /* 게임 라인 업 */
+    .lineArea{ margin: 0 auto; overflow: hidden;}
+    .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
+    /* .lineArea > div::before , .lineArea > div::after{content: ''; position: absolute; top: 0; width: 350px; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(21,3,38,1) 75%, rgba(21,3,38,1) 100%); z-index: 10;} */
+    /* .lineArea > div::before{left: 0; transform: rotate(180deg);} */
+    /* .lineArea > div::after{right: 0;} */
+    .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
+    .lineArea > div .mySwiper{overflow: visible;}
+    .lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
+    .lineArea > div .mySwiper .swiper-slide img{width: 100%;}
+
+    /* GEM & BATTLE */
+    .gemArea{position: relative;}
+    .gemArea > *{position: relative; z-index: 1;}
+    .gemArea div img{width: 100%;}
+    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%);/*  background: url('../images/gem-BG.png') no-repeat center / cover; */ z-index: 0;
+        animation-name: gamBG;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes gamBG {
+        0%{ height: 0;}
+        100%{ height: 940px;}
+    }
+
+    /* NFT */
+    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 80px; box-sizing: border-box; margin-bottom: 80px;}
+    .NFTArea div ul{display: flex; /* justify-content: space-between; */ margin-bottom: 65px;}
+    .NFTArea div ul li{width: 19.25%;}
+    .NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}
+    .NFTArea div ul li img{width: 100%;}
+    .NFTArea > a{width: 240px;}
+    .NFTArea > a::after{width: 16px; height: 16px; margin-left: 16px;}
+    .NFTArea > a:not(:last-of-type){margin-right: 14px;}
+
+    /* 로드맵 */
+    .roadArea h3{margin-bottom: 135px;}
+    .roadArea ol{display: flex; position: relative; text-align: left;}
+    .roadArea ol > li input{display: none;}
+    .roadArea ol > li{width: 33.8983%; }
+    .roadArea ol > li > label{display: flex; align-items: center; font-size: 26px; font-weight: 700; color: white; line-height: 105px; margin-bottom: 30px;}
+    .roadArea ol > li > label::before{content: ''; width: 44px; height: 40px; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 20px;}
+    .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
+    .roadArea ol > li:nth-child(1) > label{background-color: #e71e86; clip-path: polygon(0% 0%, 92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%); padding-left: 30px;}
+    .roadArea ol > li:nth-child(1) ul li{ padding-left: 30px;}
+    .roadArea ol > li:not(:first-child) > label{clip-path: polygon(92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%, 7.5% 50%, 0% 0%); padding-left: 60px;}
+    .roadArea ol > li:not(:first-child) > ul li{padding-left: 60px;}
+    .roadArea ol > li:nth-child(2) > label{background-color: #e71e9e; transform: translateX(-10px);}
+    .roadArea ol > li:nth-child(3){position: absolute; right: 0; top: 0;}
+    .roadArea ol > li:nth-child(3) > label{background-color: #e71ecd;}
+    .roadArea ol > li ul li:not(:last-child){margin-bottom: 20px;}
+    .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 20px; font-weight: 700; line-height: 30px; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top 3px; background-size: 24px; }
+    .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
+    .roadArea ol > li ul li label span{display: block;}
+
+    /* FAQ */
+    .FAQArea h3{margin-bottom: 80px;}
+    .FAQArea ul{text-align: left;}
+    .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 50px; border-radius: 25px;}
+    .FAQArea ul li:not(:last-child){margin-bottom: 25px;}
+    .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center;}
+    .FAQArea ul li button::after{content: ''; width: 28px; height: 18px; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
+    .FAQArea ul li button.active::after{transform: rotate(0deg);}
+    .FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
+    .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 40px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
+    .FAQArea ul li div p{font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background: url('../images/icon-A.png') no-repeat left top 5px;}
+
+    /* 쿠키 */
+    .cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 20px 0;}
+    .cookieArea > div{display: flex; justify-content: space-between; align-items: center; font-size: 14px;}
+    .cookieArea > div p{ line-height: 17px;}
+    .cookieArea > div p span mark{font-weight: 700; color: #e71e86; text-decoration: underline;}
+    .cookieArea > div div{display: flex;}
+    .cookieArea > div div button{width: 110px; line-height: 40px; text-align: center; border-radius: 100em;}
+    .cookieArea > div div button:nth-of-type(1){border: 1px solid white; }
+    .cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
+    .cookieArea > div div button:not(:last-of-type){margin-right: 13px;}    
 }
 
-/* 두번째 SVG */
-#mask2{width: 500px; position: absolute; right: 0; top: 0;}
-.mask2{fill:#fff;}
-[class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
-.mask2-stroke1{animation-name: mask2-stroke1; stroke-dasharray:547; stroke-dashoffset:547; animation-delay: 0s;}
-.mask2-stroke2{animation-name: mask2-stroke2; stroke-dasharray:469; stroke-dashoffset:469; animation-delay: 0.3s;}
-.mask2-stroke3{animation-name: mask2-stroke3; stroke-dasharray:356; stroke-dashoffset:356; animation-delay: 0.6s;}
-@keyframes mask2-stroke1 {
-    0%{stroke-dashoffset:547;}
-    100%{stroke-dashoffset:0;}
-}
-@keyframes mask2-stroke2 {
-    0%{stroke-dashoffset:469;}
-    100%{stroke-dashoffset:0;}
-}
-@keyframes mask2-stroke3 {
-    0%{stroke-dashoffset:356;}
-    100%{stroke-dashoffset:0;}
-}
-
-/* 게임 라인 업 */
-.lineArea{ margin: 0 auto; overflow: hidden;}
-.lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
-/* .lineArea > div::before , .lineArea > div::after{content: ''; position: absolute; top: 0; width: 350px; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(21,3,38,1) 75%, rgba(21,3,38,1) 100%); z-index: 10;} */
-/* .lineArea > div::before{left: 0; transform: rotate(180deg);} */
-/* .lineArea > div::after{right: 0;} */
-.lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
-.lineArea > div .mySwiper{overflow: visible;}
-.lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
-.lineArea > div .mySwiper .swiper-slide img{width: 100%;}
-
-/* GEM & BATTLE */
-.gemArea{position: relative;}
-.gemArea > *{position: relative; z-index: 1;}
-.gemArea div img{width: 100%;}
-.gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%); /* background: url('../images/Rectangle\ 3.png') no-repeat center / 100%; */ z-index: 0;
-    animation-name: gamBG;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-@keyframes gamBG {
-    0%{ height: 0;}
-    100%{ height: 940px;}
-}
-
-/* NFT */
-.NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 80px; box-sizing: border-box; margin-bottom: 80px;}
-.NFTArea div ul{display: flex; /* justify-content: space-between; */ margin-bottom: 65px;}
-.NFTArea div ul li{width: 19.25%;}
-.NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}
-.NFTArea div ul li img{width: 100%;}
-.NFTArea > a{width: 240px;}
-.NFTArea > a::after{width: 16px; height: 16px; margin-left: 16px;}
-.NFTArea > a:not(:last-of-type){margin-right: 14px;}
-
-/* 로드맵 */
-.roadArea h3{margin-bottom: 135px;}
-.roadArea ol{display: flex; position: relative; text-align: left;}
-.roadArea ol > li input{display: none;}
-.roadArea ol > li{width: 33.8983%; }
-.roadArea ol > li > label{display: flex; align-items: center; font-size: 26px; font-weight: 700; color: white; line-height: 105px; margin-bottom: 30px;}
-.roadArea ol > li > label::before{content: ''; width: 44px; height: 40px; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 20px;}
-.roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
-.roadArea ol > li:nth-child(1) > label{background-color: #e71e86; clip-path: polygon(0% 0%, 92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%); padding-left: 30px;}
-.roadArea ol > li:nth-child(1) ul li{ padding-left: 30px;}
-.roadArea ol > li:not(:first-child) > label{clip-path: polygon(92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%, 7.5% 50%, 0% 0%); padding-left: 60px;}
-.roadArea ol > li:not(:first-child) > ul li{padding-left: 60px;}
-.roadArea ol > li:nth-child(2) > label{background-color: #e71e9e; transform: translateX(-10px);}
-.roadArea ol > li:nth-child(3){position: absolute; right: 0; top: 0;}
-.roadArea ol > li:nth-child(3) > label{background-color: #e71ecd;}
-.roadArea ol > li ul li:not(:last-child){margin-bottom: 20px;}
-.roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 20px; font-weight: 700; line-height: 30px; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top 3px; background-size: 24px; }
-.roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
-.roadArea ol > li ul li label span{display: block;}
-
-/* FAQ */
-.FAQArea h3{margin-bottom: 80px;}
-.FAQArea ul{text-align: left;}
-.FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 50px; border-radius: 25px;}
-.FAQArea ul li:not(:last-child){margin-bottom: 25px;}
-.FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center;}
-.FAQArea ul li button::after{content: ''; width: 28px; height: 18px; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
-.FAQArea ul li button.active::after{transform: rotate(0deg);}
-.FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
-.FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 40px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
-.FAQArea ul li div p{font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background: url('../images/icon-A.png') no-repeat left top 5px;}
-
-/* 쿠키 */
-.cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 20px 0;}
-.cookieArea > div{display: flex; justify-content: space-between; align-items: center; font-size: 14px;}
-.cookieArea > div p{ line-height: 17px;}
-.cookieArea > div p span mark{font-weight: 700; color: #e71e86; text-decoration: underline;}
-.cookieArea > div div{display: flex;}
-.cookieArea > div div button{width: 110px; line-height: 40px; text-align: center; border-radius: 100em;}
-.cookieArea > div div button:nth-of-type(1){border: 1px solid white; }
-.cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
-.cookieArea > div div button:not(:last-of-type){margin-right: 13px;}
