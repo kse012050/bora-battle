@@ -1,9 +1,53 @@
 /* 최상단 */
-.contentArea{padding: 280px 0 0;}
+.contentArea{padding: 280px 0 0; position: relative;}
 .contentArea > h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
 .contentArea > p{margin-bottom: 50px;}
 .contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
 .contentArea > a{width: 210px; margin-bottom: 360px;}
+
+#mask2{width: 500px; position: absolute; right: 0; top: 0;}
+.mask2{fill:#fff;}
+[class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+.mask2-stroke1{animation-name: mask2-stroke1; stroke-dasharray:547; stroke-dashoffset:547; animation-delay: 0s;}
+.mask2-stroke2{animation-name: mask2-stroke2; stroke-dasharray:469; stroke-dashoffset:469; animation-delay: 0.3s;}
+.mask2-stroke3{animation-name: mask2-stroke3; stroke-dasharray:356; stroke-dashoffset:356; animation-delay: 0.6s;}
+@keyframes mask2-stroke1 {
+    0%{stroke-dashoffset:547;}
+    100%{stroke-dashoffset:0;}
+}
+@keyframes mask2-stroke2 {
+    0%{stroke-dashoffset:469;}
+    100%{stroke-dashoffset:0;}
+}
+@keyframes mask2-stroke3 {
+    0%{stroke-dashoffset:356;}
+    100%{stroke-dashoffset:0;}
+}
+
+/* 게임 라인 업 */
+.lineArea{ margin: 0 auto; overflow: hidden;}
+.lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
+/* .lineArea > div::before , .lineArea > div::after{content: ''; position: absolute; top: 0; width: 350px; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(21,3,38,1) 75%, rgba(21,3,38,1) 100%); z-index: 10;} */
+/* .lineArea > div::before{left: 0; transform: rotate(180deg);} */
+/* .lineArea > div::after{right: 0;} */
+.lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
+.lineArea > div .mySwiper{overflow: visible;}
+.lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
+.lineArea > div .mySwiper .swiper-slide img{width: 100%;}
+
+/* GEM & BATTLE */
+.gemArea{position: relative;}
+.gemArea > *{position: relative; z-index: 1;}
+.gemArea div img{width: 100%;}
+.gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%); /* background: url('../images/Rectangle\ 3.png') no-repeat center / 100%; */ z-index: 0;
+    animation-name: gamBG;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes gamBG {
+    0%{ height: 0;}
+    100%{ height: 940px;}
+}
 
 /* NFT */
 .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 80px; box-sizing: border-box; margin-bottom: 80px;}
