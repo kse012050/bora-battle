@@ -5,6 +5,27 @@
 .contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
 .contentArea > a{width: 210px; margin-bottom: 360px;}
 
+/* 첫번째 SVG */
+#mask1{width: 500px; position: absolute; left: 0; top: 0;}
+.mask1{fill:#fff;}
+[class*='mask1-stroke']{stroke:#E72285;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+.mask1-stroke1{animation-name: mask1-stroke1; stroke-dasharray:332; stroke-dashoffset:332; animation-delay: 0s;}
+.mask1-stroke2{animation-name: mask1-stroke2; stroke-dasharray:458; stroke-dashoffset:458; animation-delay: 0.3s;}
+.mask1-stroke3{animation-name: mask1-stroke3; stroke-dasharray:503; stroke-dashoffset:503; animation-delay: 0.6s;}
+@keyframes mask1-stroke1 {
+    0%{stroke-dashoffset:332;}
+    100%{stroke-dashoffset:0;}
+}
+@keyframes mask1-stroke2 {
+    0%{stroke-dashoffset:458;}
+    100%{stroke-dashoffset:0;}
+}
+@keyframes mask1-stroke3 {
+    0%{stroke-dashoffset:503;}
+    100%{stroke-dashoffset:0;}
+}
+
+/* 두번째 SVG */
 #mask2{width: 500px; position: absolute; right: 0; top: 0;}
 .mask2{fill:#fff;}
 [class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
