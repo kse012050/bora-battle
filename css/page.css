@@ -1,11 +1,11 @@
 @media screen and (min-width : 800px) {
     /* 최상단 */
     .contentArea{padding: 280px 0 0; position: relative; overflow: hidden;}
-    .contentArea > *:not(section){position: relative; z-index: 101;}
-    .contentArea > h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
-    .contentArea > p{margin-bottom: 50px;}
-    .contentArea > small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
-    .contentArea > a{width: 210px; margin-bottom: 360px;}
+    .contentArea .topArea{margin-bottom: 360px; position: relative; z-index: 101;}
+    .contentArea .topArea h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
+    .contentArea .topArea p{margin-bottom: 50px;}
+    .contentArea .topArea small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
+    .contentArea .topArea a{width: 210px; }
 
     /* 첫번째 SVG */
     #mask1{width: 42.9%; position: absolute; left: 35px; top: 105px; z-index: 100;}
@@ -56,12 +56,19 @@
     .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
     .lineArea > div .mySwiper{overflow: visible;}
     .lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
-    .lineArea > div .mySwiper .swiper-slide img{width: 100%;}
+    .lineArea > div .mySwiper .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
+    .lineArea > div .mySwiper .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
+    .lineArea > div .mySwiper .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        /* 실제 비디오가 들어오면 삭제 */
+        background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
+    }
+    .lineArea > div .mySwiper :is(.swiper-slide-active ,.swiper-slide-next , .swiper-slide-next + .swiper-slide):hover img{opacity: 0; pointer-events: none;}
 
     /* GEM & BATTLE */
     .gemArea{position: relative;}
     .gemArea > *{position: relative; z-index: 1;}
-    .gemArea div img{width: 100%;}
+    .gemArea div span{display: block; height: 0.001px; overflow: hidden; text-indent: -9999px; padding-bottom: 34.8305%; background: url('../images/battle-img.png') no-repeat center / cover; }
+    /* .gemArea div img{width: 100%;} */
     .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%);/*  background: url('../images/gem-BG.png') no-repeat center / cover; */ z-index: 0;
         animation-name: gamBG;
         animation-duration: 0.5s;
@@ -74,7 +81,7 @@
 
     /* NFT */
     .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 80px; box-sizing: border-box; margin-bottom: 80px;}
-    .NFTArea div ul{display: flex; /* justify-content: space-between; */ margin-bottom: 65px;}
+    .NFTArea div ul{display: flex; justify-content: center; margin-bottom: 65px;}
     .NFTArea div ul li{width: 19.25%;}
     .NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}
     .NFTArea div ul li img{width: 100%;}
@@ -107,12 +114,12 @@
     .FAQArea ul{text-align: left;}
     .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 50px; border-radius: 25px;}
     .FAQArea ul li:not(:last-child){margin-bottom: 25px;}
-    .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center;}
+    .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center / 18px;}
     .FAQArea ul li button::after{content: ''; width: 28px; height: 18px; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
     .FAQArea ul li button.active::after{transform: rotate(0deg);}
     .FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
     .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 40px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
-    .FAQArea ul li div p{font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background: url('../images/icon-A.png') no-repeat left top 5px;}
+    .FAQArea ul li div p{font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background: url('../images/icon-A.png') no-repeat left top 5px / 18px;}
 
     /* 쿠키 */
     .cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 20px 0;}

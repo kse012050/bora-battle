@@ -2,33 +2,159 @@
     /* 폰트 공통 */
     :is(h2 , h3 , h4) + p{color: rgba(255, 255, 255, 0.5);}
     p span{display: block;}
-    h2 + p{font-size: 24px; line-height: 30px;}
-    :is(h3 , h4) + p{font-size: 20px; line-height: 26px; margin-top: 25px;}
-    h3 + p{margin-bottom: 80px;}
+    h2 + p{font-size: 32px; line-height: 38px;}
+    h3 + p{font-size: 30px; line-height: 36px; margin: 40px 50px 75px;}
+    h4 + p{font-size: 28px; line-height: 33px;}
     /* 타이틀 크기 */
-    h3{font-size: 50px; font-weight: 700;}
-    h4{font-size: 28px; font-weight: 700;}
+    h3{font-size: 38px; font-weight: 700;}
+    h4{font-size: 36px; font-weight: 700; margin-bottom: 30px;}
 
     /* 컨텐츠 링크 공통 */
-    section a{font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
+    section a{font-weight: 700; color: white; line-height: 90px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
 
     /* 켄턴츠 사이 간격 */
-    .contentArea section{margin-bottom: 270px;}
+    .contentArea section{margin-bottom: 320px;}
 
 
 
     /* 해더 */
     header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000;}
-    header div{}
+    header div{display: flex; justify-content: space-between; align-items: center;}
     header div h1{width: 277px;}
     header div h1 a{display: block;}
     header div h1 a img{width: 100%;}
-    header div nav ul{display: flex;}
-    header div nav ul li:not(:last-child){margin-right: 50px;}
-    header div nav ul li a{font-size: 14px; text-transform: uppercase;}
-    header div nav ul li a.icon-link::after{width: 12px; height: 12px; margin-left: 8px;}
+    header div button{width: 42px;}
+    header div button span{display: block; height: 4px; background-color: white;}
+    header div button span:not(:last-child){margin-bottom: 12px;}
+    header div nav{position: fixed; left: 0; right: 0; top: 100px; bottom: 0; display: none; justify-content: center; align-items: center; background-color: black;}
+    header div nav ul li:not(:last-child){margin-bottom: 6.25vh;}
+    header div nav ul li a{font-size: 40px; text-transform: uppercase;}
+    header div nav ul li a.icon-link::after{width: 32px; height: 32px; margin-left: 20px;}
 
     /* 푸터 */
     footer{line-height: 90px; background-color: black;}
     footer p{font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
+
+
+
+    /* 최상단 */
+    .contentArea{padding: 330px 0 0; position: relative; overflow: hidden; }
+    .contentArea .topArea{position: relative; z-index: 101; margin-bottom: 270px;}
+    .contentArea .topArea h2{font-size: 56px; font-weight: 700; line-height: 1.2354; max-width: 1060px; margin: 0 auto 35px;}
+    .contentArea .topArea h2 span{display: block; font-size: 46px;}
+    .contentArea .topArea p{margin-bottom: 180px;}
+    .contentArea .topArea small{display: block; font-size: 28px; color: rgba(255, 255, 255, 0.5); margin-bottom: 45px;}
+    .contentArea .topArea a{width: 350px; font-size: 32px;}
+
+    /* 첫번째 SVG */
+    #mask1{width: 42.9%; position: absolute; left: 35px; top: 105px; z-index: 100;}
+    .mask1{fill:#fff;}
+    [class*='mask1-stroke']{stroke:#E72285;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+    .mask1-stroke1{animation-name: mask1-stroke1; stroke-dasharray:332; stroke-dashoffset:332; animation-delay: 0s;}
+    .mask1-stroke2{animation-name: mask1-stroke2; stroke-dasharray:458; stroke-dashoffset:458; animation-delay: 0.3s;}
+    .mask1-stroke3{animation-name: mask1-stroke3; stroke-dasharray:503; stroke-dashoffset:503; animation-delay: 0.6s;}
+    @keyframes mask1-stroke1 {
+        0%{stroke-dashoffset:332;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask1-stroke2 {
+        0%{stroke-dashoffset:458;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask1-stroke3 {
+        0%{stroke-dashoffset:503;}
+        100%{stroke-dashoffset:0;}
+    }
+
+    /* 두번째 SVG */
+    #mask2{width: 47.8%; position: absolute; right: -10.9%; top: -6%;}
+    .mask2{fill:#fff;}
+    [class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
+    .mask2-stroke1{animation-name: mask2-stroke1; stroke-dasharray:547; stroke-dashoffset:547; animation-delay: 0.6s;}
+    .mask2-stroke2{animation-name: mask2-stroke2; stroke-dasharray:469; stroke-dashoffset:469; animation-delay: 0.9s;}
+    .mask2-stroke3{animation-name: mask2-stroke3; stroke-dasharray:356; stroke-dashoffset:356; animation-delay: 1.2s;}
+    @keyframes mask2-stroke1 {
+        0%{stroke-dashoffset:547;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask2-stroke2 {
+        0%{stroke-dashoffset:469;}
+        100%{stroke-dashoffset:0;}
+    }
+    @keyframes mask2-stroke3 {
+        0%{stroke-dashoffset:356;}
+        100%{stroke-dashoffset:0;}
+    }
+
+    /* 게임 라인 업 */
+    .lineArea{ margin: 0 auto; overflow: hidden;}
+    .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
+    .lineArea > div .mySwiper{overflow: visible;}
+    .lineArea > div .mySwiper .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
+    .lineArea > div .mySwiper .swiper-slide:not(.swiper-slide-active){opacity: 0.5; transition: opacity 0.5s;}
+    .lineArea > div .mySwiper .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
+    .lineArea > div .mySwiper .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        /* 실제 비디오가 들어오면 삭제 */
+        background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
+    }
+    .lineArea > div .mySwiper .swiper-slide-active:hover img{opacity: 0; pointer-events: none;}
+
+    /* GEM & BATTLE */
+    .gemArea{position: relative;}
+    .gemArea > *{position: relative; z-index: 1;}
+    .gemArea div span{display: block; height: 0.001px; overflow: hidden; text-indent: -9999px; padding-bottom: 36.9696%; background: url('../images/battle-Mimg.png') no-repeat center / cover; }
+    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 900px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%);/*  background: url('../images/gem-BG.png') no-repeat center / cover; */ z-index: 0;
+        animation-name: gamBG;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes gamBG {
+        0%{ height: 0;}
+        100%{ height: 940px;}
+    }
+
+    /* NFT */
+    .NFTArea div{background: url('../images/NFT-MBG.png') no-repeat center / 100%; padding: 55px 35px 95px; box-sizing: border-box; margin-bottom: 80px;}
+    .NFTArea div ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 80px;}
+    .NFTArea div ul li{width: calc((100% - 20px) / 3);}
+    .NFTArea div ul li img{width: 100%;}
+    .NFTArea div p span:last-child{margin-top: 35px;}
+    .NFTArea > a{width: 300px; font-size: 28px;}
+    .NFTArea > a::after{width: 24px; height: 24px; margin-left: 10px;}
+    .NFTArea > a:not(:last-of-type){margin-right: 14px;}
+
+
+    /* 로드맵 */
+    .roadArea h3{margin-bottom: 100px;}
+    .roadArea ol{position: relative; text-align: left;}
+    .roadArea ol > li{position: relative;}
+    .roadArea ol > li input{display: none;}
+    .roadArea ol > li:not(:last-child){margin-bottom: 120px;}
+    .roadArea ol > li > label{width: 90.3225%; display: flex; align-items: center; font-size: 36px; font-weight: 700; color: white; line-height: 135px; margin-bottom: 50px;}
+    .roadArea ol > li > label::before{content: ''; width: 60px; height: 56px; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 36px;}
+    .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
+    .roadArea ol > li > label{clip-path: polygon(92.85% 0%, 100% 50%, 92.85% 100%, 0% 100%, 6.6% 50%, 0% 0%); padding-left: 80px; box-sizing: border-box;}
+    .roadArea ol > li::after{content: ''; position: absolute; right: 0; top: 0; width: 82px; height: 135px; clip-path: polygon(52.43% 0%, 100% 50%, 52.43% 100%, 0% 100%, 47.56% 50%, 0% 0%);}
+    .roadArea ol > li:nth-child(1):after{background-color: #e71e9e;}
+    .roadArea ol > li:nth-child(2):after{background-color: #e71ecd;}
+    .roadArea ol > li:nth-child(3):after{background-color: #e71ecd;}
+    .roadArea ol > li:nth-child(1) > label{background-color: #e71e86;}
+    .roadArea ol > li:nth-child(2) > label{background-color: #e71e9e;}
+    .roadArea ol > li:nth-child(3) > label{background-color: #e71ecd;}
+    .roadArea ol > li ul li{padding-left: 20px;}
+    .roadArea ol > li ul li:not(:last-child){margin-bottom: 40px;}
+    .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 32px; font-weight: 700; line-height: 40px; color: rgba(255, 255, 255, 0.7); padding-left: 65px; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top; background-size: 40px; }
+    .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
+
+    /* FAQ */
+    .FAQArea h3{margin-bottom: 65px;}
+    .FAQArea ul{text-align: left;}
+    .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 45px; border-radius: 25px;}
+    .FAQArea ul li:not(:last-child){margin-bottom: 35px;}
+    .FAQArea ul li button{width: 100%; height: 215px; display: flex; justify-content: space-between; align-items: center; padding-left: 65px; text-align: left; font-size: 36px; line-height: 42px; background: url('../images/icon-Q.png') no-repeat left center / 37px;}
+    .FAQArea ul li button::after{content: ''; min-width: 28px; height: 18px; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
+    .FAQArea ul li button.active::after{transform: rotate(0deg);}
+    .FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
+    .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 60px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
+    .FAQArea ul li div p{font-size: 32px; line-height: 38px; color: rgba(255, 255, 255, 0.7); padding-left: 65px; background: url('../images/icon-A.png') no-repeat left top / 35px;}
 }
