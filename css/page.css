@@ -1,4 +1,4 @@
-@media screen and (min-width : 1201px) {
+@media screen and (min-width : 801px) {
     /* 최상단 */
     .contentArea{padding: 280px 0 0; position: relative; overflow: hidden;}
     .contentArea .topArea{margin-bottom: 360px; position: relative; z-index: 101;}
@@ -72,7 +72,7 @@
     .NFTArea{position: relative;}
     .NFTArea::after{content: ''; position: absolute; left: 0; top: -123px; width: 100%; height: 1147px; background: url('../images/NFT-background.png') no-repeat center bottom; z-index: 0;}
     .NFTArea > *{position: relative; z-index: 1;}
-    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 70px; border-radius: 40px; box-sizing: border-box; margin-bottom: 80px;}
+    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / cover; padding: 50px 50px 70px; border-radius: 40px; box-sizing: border-box; margin-bottom: 80px;}
     .NFTArea div ul{display: flex; justify-content: center; margin-bottom: 65px;}
     .NFTArea div ul li{width: 19.25%;}
     .NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}

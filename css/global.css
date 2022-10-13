@@ -15,7 +15,7 @@ a , p , small , label , button , strong{font-family: 'Arial';}
 .icon-link{display: inline-flex; justify-content: center; align-items: center;}
 .icon-link::after{content: ''; background-image: url('../images/icon-link.png'); background-repeat: no-repeat; background-position: center; background-size: cover;}
 
-@media screen and (min-width : 1201px) {
+@media screen and (min-width : 801px) {
     
 
     /* 폰트 공통 */
