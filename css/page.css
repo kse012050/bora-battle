@@ -1,14 +1,14 @@
-@media screen and (min-width : 801px) {
+@media screen and (min-width : 851px) {
     /* 최상단 */
-    .contentArea{padding: 280px 0 0; position: relative; overflow: hidden;}
-    .contentArea .topArea{margin-bottom: 360px; position: relative; z-index: 101;}
-    .contentArea .topArea h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
-    .contentArea .topArea p{margin-bottom: 50px;}
-    .contentArea .topArea small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
-    .contentArea .topArea a{width: 210px; font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
+    .contentArea{padding: 17.500rem 0 0; position: relative; overflow: hidden;}
+    .contentArea .topArea{margin-bottom: 22.500rem; position: relative; z-index: 101;}
+    .contentArea .topArea h2{font-size: 5.000rem; font-weight: 700; line-height: 1.3125; max-width: 66.250rem; margin: 0 auto 2.500rem;}
+    .contentArea .topArea p{margin-bottom: 3.125rem;}
+    .contentArea .topArea small{display: block; font-size: 0.750rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 1.250rem;}
+    .contentArea .topArea a{width: 13.125rem; font-size: 1.250rem; font-weight: 700; color: white; line-height: 3.438rem; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100rem;}
 
     /* 첫번째 SVG */
-    #mask1{width: 42.9%; position: absolute; left: 35px; top: 105px; z-index: 100;}
+    #mask1{width: 42.9%; position: absolute; left: 2.188rem; top: 6.563rem; z-index: 100;}
     .mask1{fill:#fff;}
     [class*='mask1-stroke']{stroke:#E72285;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
     .mask1-stroke1{animation-name: mask1-stroke1; stroke-dasharray:332; stroke-dashoffset:332; animation-delay: 0s;}
@@ -49,11 +49,11 @@
 
     /* 게임 라인 업 */
     .lineArea{ margin: 0 auto; overflow: hidden;}
-    .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
-    .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
+    .lineArea > div{max-width: 120.000rem; margin: 0 auto; position: relative; overflow: hidden;}
+    .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 120.000rem; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
     .lineArea > div .lineUpSlider{overflow: visible;}
     .lineArea > div .lineUpSlider :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
-    .lineArea > div .lineUpSlider .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
+    .lineArea > div .lineUpSlider .swiper-slide{border-radius: 1.875rem; line-height: 0; overflow: hidden;}
     .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
     .lineArea > div .lineUpSlider .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
         /* 실제 비디오가 들어오면 삭제 */
@@ -61,23 +61,23 @@
     }
     .lineArea > div .lineUpSlider :is(.swiper-slide-active ,.swiper-slide-next , .swiper-slide-next + .swiper-slide):hover img{opacity: 0; pointer-events: none;}
 
-    /* GEM & BATTLE */
+    /* Grem & BATTLE */
     .gemArea{position: relative;}
     .gemArea > *{position: relative; z-index: 10;}
     .gemArea div span{display: block; height: 0.001px; overflow: hidden; text-indent: -9999px; padding-bottom: 34.8305%; background: url('../images/battle-img.png') no-repeat center / cover; }
-    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: url('../images/gem-BG.png') no-repeat center / cover; z-index: 0;}
+    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 58.750rem; transform: translateY(-50%); background: url('../images/gem-BG.png') no-repeat center / cover; z-index: 0;}
   
 
     /* NFT */
     .NFTArea{position: relative;}
-    .NFTArea::after{content: ''; position: absolute; left: 0; top: -123px; width: 100%; height: 1147px; background: url('../images/NFT-background.png') no-repeat center bottom; z-index: 0;}
+    .NFTArea::after{content: ''; position: absolute; left: 0; /* top: -7.688rem; */ bottom: -7.500rem; width: 100%; height: 71.688rem; background: url('../images/NFT-background.png') no-repeat center bottom; z-index: 0;}
     .NFTArea > *{position: relative; z-index: 1;}
-    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / cover; padding: 50px 50px 70px; border-radius: 40px; box-sizing: border-box; margin-bottom: 80px;}
-    .NFTArea div ul{display: flex; justify-content: center; margin-bottom: 65px;}
+    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / cover; padding: 3.125rem 3.125rem 4.375rem; border-radius: 2.500rem; box-sizing: border-box; margin-bottom: 5.000rem;}
+    .NFTArea div ul{display: flex; justify-content: center; margin-bottom: 4.063rem;}
     .NFTArea div ul li{width: 19.25%;}
     .NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}
     .NFTArea div ul li img{width: 100%;}
-    .NFTArea > a{width: 240px; font-size: 20px; font-weight: 700; color: rgba(0,0,0,0.5); line-height: 55px; text-align: center;  background: #ccc; border-radius: 100em; pointer-events: none;}
+    .NFTArea > a{width: 15.000rem; font-size: 1.250rem; font-weight: 700; color: rgba(0,0,0,0.5); line-height: 3.438rem; text-align: center;  background: #ccc; border-radius: 100rem; pointer-events: none;}
     .NFTArea > a{text-indent: -9999px;}
     .NFTArea > a::before{text-indent: 0;}
     .NFTArea > a::before{content: attr(data-before);}
@@ -87,66 +87,66 @@
     .NFTArea > a[data-minting]::after{background-image: url('../images/icon-link.png');}
     .NFTArea > a[data-minting].active{text-indent: 0;}
     .NFTArea > a[data-minting].active::before{display: none;}
-    .NFTArea > a::after{width: 16px; height: 16px; margin-left: 16px;}
-    .NFTArea > a:not(:last-of-type){margin-right: 14px;}
+    .NFTArea > a::after{width: 1.000rem; height: 1.000rem; margin-left: 1.000rem;}
+    .NFTArea > a:not(:last-of-type){margin-right: 0.875rem;}
 
     /* 로드맵 */
     .roadArea{position: relative;}
-    .roadArea::after{content: ''; position: absolute; left: 0; top: -150px; width: 100%; height: 1155px; background: url('../images/road-background.png') no-repeat center top; z-index: 0;}
-    .roadArea::before{content: ''; position: absolute; left: 50%; top: -150px; width: 100%; height: 950px; background: url('../images/road-background2.png') no-repeat center top; transform: translateX(-50%); z-index: 1;}
+    .roadArea::after{content: ''; position: absolute; left: 0; top: -9.375rem; width: 100%; height: 72.188rem; background: url('../images/road-background.png') no-repeat center top / 100%; z-index: 0;}
+    .roadArea::before{content: ''; position: absolute; left: 50%; top: -9.375rem; width: 100%; height: 59.375rem; background: url('../images/road-background2.png') no-repeat center top; transform: translateX(-50%); z-index: 1;}
     .roadArea > *{position: relative; z-index: 10;}
-    .roadArea h3{margin-bottom: 135px;}
+    .roadArea h3{margin-bottom: 8.438rem;}
     .roadArea ol{display: flex; position: relative; text-align: left;}
     .roadArea ol > li input{display: none;}
     .roadArea ol > li{width: 33.8983%; }
-    .roadArea ol > li > label{display: flex; align-items: center; font-size: 26px; font-weight: 700; color: white; line-height: 105px; margin-bottom: 30px;}
-    .roadArea ol > li > label::before{content: ''; width: 44px; height: 40px; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 20px;}
+    .roadArea ol > li > label{display: flex; align-items: center; font-size: 1.625rem; font-weight: 700; color: white; line-height: 6.563rem; margin-bottom: 1.875rem;}
+    .roadArea ol > li > label::before{content: ''; width: 2.750rem; height: 2.500rem; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 1.250rem;}
     .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
-    .roadArea ol > li:nth-child(1) > label{background-color: #e71e86; clip-path: polygon(0% 0%, 92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%); padding-left: 30px;}
-    .roadArea ol > li:nth-child(1) ul li{ padding-left: 30px;}
-    .roadArea ol > li:not(:first-child) > label{clip-path: polygon(92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%, 7.5% 50%, 0% 0%); padding-left: 60px;}
-    .roadArea ol > li:not(:first-child) > ul li{padding-left: 60px;}
-    .roadArea ol > li:nth-child(2) > label{background-color: #e71e9e; transform: translateX(-10px);}
+    .roadArea ol > li:nth-child(1) > label{background-color: #e71e86; clip-path: polygon(0% 0%, 92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%); padding-left: 1.875rem;}
+    .roadArea ol > li:nth-child(1) ul li{ padding-left: 1.875rem;}
+    .roadArea ol > li:not(:first-child) > label{clip-path: polygon(92.5% 0%, 100% 50%, 92.5% 100%, 0% 100%, 7.5% 50%, 0% 0%); padding-left: 3.750rem;}
+    .roadArea ol > li:not(:first-child) > ul li{padding-left: 3.750rem;}
+    .roadArea ol > li:nth-child(2) > label{background-color: #e71e9e; transform: translateX(-0.625rem);}
     .roadArea ol > li:nth-child(3){position: absolute; right: 0; top: 0;}
     .roadArea ol > li:nth-child(3) > label{background-color: #e71ecd;}
-    .roadArea ol > li ul li:not(:last-child){margin-bottom: 20px;}
-    .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 20px; font-weight: 700; line-height: 30px; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top 3px; background-size: 24px; }
+    .roadArea ol > li ul li:not(:last-child){margin-bottom: 1.250rem;}
+    .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 1.250rem; font-weight: 700; line-height: 1.875rem; color: rgba(255, 255, 255, 0.7); padding-left: 2.500rem; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top 0.188rem; background-size: 1.500rem; }
     .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
     .roadArea ol > li ul li label span{display: block;}
 
     /* FAQ */
     .FAQArea{position: relative; z-index: 10;}
-    .FAQArea::after{content: ''; position: absolute; left: 50%; bottom: -360px; transform: translateX(-50%); width: 2145px; height: 1034px; background: url('../images/FAQ-BG.png') no-repeat right bottom / 863px;}
-    .FAQArea h3{margin-bottom: 80px;}
+    .FAQArea::after{content: ''; position: absolute; left: 50%; bottom: -22.500rem; transform: translateX(-50%); width: 134.063rem; height: 64.625rem; background: url('../images/FAQ-BG.png') no-repeat right bottom / 53.938rem;}
+    .FAQArea h3{margin-bottom: 5.000rem;}
     .FAQArea ul{text-align: left; position: relative; z-index: 10;}
-    .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 50px; border-radius: 25px;}
-    .FAQArea ul li:not(:last-child){margin-bottom: 25px;}
-    .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center / 18px;}
-    .FAQArea ul li button::after{content: ''; width: 28px; height: 18px; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
+    .FAQArea ul li{background-color: #3f0576; border: 0.063rem solid #55009c; padding: 0 3.125rem; border-radius: 1.563rem;}
+    .FAQArea ul li:not(:last-child){margin-bottom: 1.563rem;}
+    .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 2.500rem 0 2.500rem 2.500rem; font-size: 1.500rem; background: url('../images/icon-Q.png') no-repeat left center / 1.125rem;}
+    .FAQArea ul li button::after{content: ''; width: 1.750rem; height: 1.125rem; background: url('../images/icon-down.png') no-repeat center / cover; transform: rotate(180deg);}
     .FAQArea ul li button.active::after{transform: rotate(0deg);}
-    .FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
-    .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 40px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
-    .FAQArea ul li div p{font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 40px; background: url('../images/icon-A.png') no-repeat left top 5px / 18px;}
+    .FAQArea ul li div{display: none; padding: 2.500rem 0 2.188rem; position: relative; }
+    .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 2.500rem); height: 0.063rem; background-color: rgba(255, 255, 255, 0.15);}
+    .FAQArea ul li div p{font-size: 1.250rem; line-height: 1.5; color: rgba(255, 255, 255, 0.7); padding-left: 2.500rem; background: url('../images/icon-A.png') no-repeat left top 0.313rem / 1.125rem;}
 
     /* 쿠키 */
-    .cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 20px 0;}
-    .cookieArea > div{display: flex; justify-content: space-between; align-items: center; font-size: 14px;}
-    .cookieArea > div p{ line-height: 17px;}
+    .cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 1.250rem 0;}
+    .cookieArea > div{display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem;}
+    .cookieArea > div p{ line-height: 1.063rem;}
     .cookieArea > div p span mark{font-weight: 700; color: #e71e86; text-decoration: underline;}
     .cookieArea > div div{display: flex;}
-    .cookieArea > div div button{width: 110px; line-height: 40px; text-align: center; border-radius: 100em;}
-    .cookieArea > div div button:nth-of-type(1){border: 1px solid white; }
+    .cookieArea > div div button{width: 6.875rem; line-height: 2.500rem; text-align: center; border-radius: 100rem;}
+    .cookieArea > div div button:nth-of-type(1){border: 0.063rem solid white; }
     .cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
-    .cookieArea > div div button:not(:last-of-type){margin-right: 13px;}    
+    .cookieArea > div div button:not(:last-of-type){margin-right: 0.813rem;}    
 
     /* 팝업 */
     .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 1000;}
-    .popupArea > div{width: calc(100% - 50px); max-width: 840px; height: 69.44vh; display: flex; flex-direction: column; position: relative;}
-    .popupArea > div strong{font-size: 24px; line-height: 26px; font-weight: 700; min-height: 105px; background: url('../images/popup-titleBG.png') no-repeat right center / cover; display: flex; justify-content: center; align-items: center; padding: 0 180px 0 30px; border-radius: 30px 30px 0 0;}
-    .popupArea > div > div{ padding: 30px; max-height: calc(100% - 105px);  background-color: white; border-radius: 0 0 30px 30px; box-sizing: border-box;}
-    .popupArea > div > div div{font-size: 15px; font-weight: 400; height: 100%; color: #333333;  overflow: auto;}
-    .popupArea > div > div div::-webkit-scrollbar{width: 5px; }
-    .popupArea > div > div div::-webkit-scrollbar-thumb{background-color: #cccccc; border-radius: 100px;}
-    .popupArea > div button{position: absolute; left: 50%; bottom: -80px; transform: translateX(-50%); width: 50px; height: 50px; background: url('../images/popup-close.png') no-repeat center / cover; text-indent: -9999px;}
+    .popupArea > div{width: calc(100% - 3.125rem); max-width: 52.500rem; height: 69.44vh; display: flex; flex-direction: column; position: relative;}
+    .popupArea > div strong{font-size: 1.500rem; line-height: 1.625rem; font-weight: 700; min-height: 6.563rem; background: url('../images/popup-titleBG.png') no-repeat right center / cover; display: flex; justify-content: center; align-items: center; padding: 0 11.250rem 0 1.875rem; border-radius: 1.875rem 1.875rem 0 0;}
+    .popupArea > div > div{ padding: 1.875rem; max-height: calc(100% - 6.563rem);  background-color: white; border-radius: 0 0 1.875rem 1.875rem; box-sizing: border-box;}
+    .popupArea > div > div div{font-size: 0.938rem; font-weight: 400; height: 100%; color: #333333;  overflow: auto;}
+    .popupArea > div > div div::-webkit-scrollbar{width: 0.313rem; }
+    .popupArea > div > div div::-webkit-scrollbar-thumb{background-color: #cccccc; border-radius: 6.250rem;}
+    .popupArea > div button{position: absolute; left: 50%; bottom: -5.000rem; transform: translateX(-50%); width: 3.125rem; height: 3.125rem; background: url('../images/popup-close.png') no-repeat center / cover; text-indent: -9999px;}
 }
 

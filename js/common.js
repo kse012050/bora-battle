@@ -20,7 +20,7 @@ function lineUpSlider(){
                 slidesPerView: 1,
                 spaceBetween: 20
             },
-                800: {
+            850: {
                 slidesPerView: 3,
                 spaceBetween: 20
             },
