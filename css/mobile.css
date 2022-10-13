@@ -13,7 +13,7 @@
     h4{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.875rem;}
 
     /* 컨텐츠 링크 공통 */
-    section a{font-weight: 700; color: white; line-height: 5.625rem; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100rem;}
+    /* section a{font-weight: 700; color: white; line-height: 5.625rem; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100rem;} */
 
     /* 켄턴츠 사이 간격 */
     .contentArea section{margin-bottom: 20.000rem;}
@@ -53,7 +53,7 @@
     .contentArea .topArea h2 span{display: block; font-size: 2.875rem;}
     .contentArea .topArea p{margin-bottom: 11.250rem;}
     .contentArea .topArea small{display: block; font-size: 1.750rem; color: rgba(255, 255, 255, 0.5); margin-bottom: 2.813rem;}
-    .contentArea .topArea a{width: 21.875rem; font-size: 2.000rem;}
+    .contentArea .topArea a{width: 21.875rem; font-size: 2.000rem; font-weight: 700; color: white; line-height: 5.625rem; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100rem;}
 
     /* 첫번째 SVG */
     #mask1{width: 38.750rem; position: absolute; left: -23.750rem; top: 36.875rem; z-index: 100;}
@@ -121,7 +121,16 @@
     .NFTArea div ul li{width: calc((100% - 1.250rem) / 3);}
     .NFTArea div ul li img{width: 100%;}
     .NFTArea div p span:last-child{margin-top: 2.188rem;}
-    .NFTArea > a{width: 18.750rem; font-size: 1.750rem;}
+    .NFTArea > a{width: 18.750rem; font-size: 1.750rem; font-weight: 700; color: rgba(0,0,0,0.5); line-height: 5.625rem; text-align: center;  background: #ccc; border-radius: 100rem; pointer-events: none;}
+    .NFTArea > a{text-indent: -9999px;}
+    .NFTArea > a::before{text-indent: 0;}
+    .NFTArea > a::before{content: attr(data-before);}
+    .NFTArea > a::after{background-image: url('../images/icon-link-disable.png');}
+    .NFTArea > a[data-minting]{color: white; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); pointer-events: all;}
+    .NFTArea > a[data-minting]::before{content: attr(data-minting); }
+    .NFTArea > a[data-minting]::after{background-image: url('../images/icon-link.png');}
+    .NFTArea > a[data-minting].active{text-indent: 0;}
+    .NFTArea > a[data-minting].active::before{display: none;}
     .NFTArea > a::after{width: 1.500rem; height: 1.500rem; margin-left: 0.625rem;}
     .NFTArea > a:not(:last-of-type){margin-right: 0.875rem;}
 
