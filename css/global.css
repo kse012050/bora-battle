@@ -2,17 +2,18 @@
 /* termina 폰트 */
 h1 , h2 , h3 , h4{font-family: "termina",sans-serif;}
 /* Arial 폰트 */
-a , p , small , label , button{font-family: 'Arial';}
+a , p , small , label , button , strong{font-family: 'Arial';}
 
 /* 전체 배경색 */
-.boraPage{background-color: #150326; color: white; text-align: center;}
+.boraPage{background-color: #150326; color: white;}
+.boraPage .contentArea{text-align: center;}
 
 /* 컨텐츠 크기 */
 .contentSize{width: calc(100% - 100px); max-width: 1180px; margin: 0 auto;}
 
 /* link 아이콘 */
 .icon-link{display: inline-flex; justify-content: center; align-items: center;}
-.icon-link::after{content: ''; background: url('../images/icon-link.png') no-repeat center / cover;}
+.icon-link::after{content: ''; background-image: url('../images/icon-link.png'); background-repeat: no-repeat; background-position: center; background-size: cover;}
 
 @media screen and (min-width : 800px) {
     
@@ -28,7 +29,7 @@ a , p , small , label , button{font-family: 'Arial';}
     h4{font-size: 28px; font-weight: 700;}
 
     /* 컨텐츠 링크 공통 */
-    section a{font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
+    /* section a{font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;} */
 
     /* 켄턴츠 사이 간격 */
     .contentArea section{margin-bottom: 270px;}
@@ -36,7 +37,7 @@ a , p , small , label , button{font-family: 'Arial';}
 
 
     /* 해더 */
-    header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000;}
+    header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000; transition: 0.5s background-color;}
     header div{display: flex; justify-content: space-between; align-items: center;}
     header div h1{width: 159px;}
     header div h1 a{display: block;}
@@ -47,7 +48,9 @@ a , p , small , label , button{font-family: 'Arial';}
     header div nav ul li a{font-size: 14px; text-transform: uppercase;}
     header div nav ul li a.icon-link::after{width: 12px; height: 12px; margin-left: 8px;}
 
+    header.active{background-color: #150326;}
+
     /* 푸터 */
-    footer{line-height: 90px; background-color: black;}
+    footer{line-height: 90px; background-color: black; text-align: center;}
     footer p{font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
 }

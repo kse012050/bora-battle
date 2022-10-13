@@ -16,4 +16,8 @@ $(document).ready(function(){
         $(this).toggleClass('active');
         $(this).next().slideToggle();
     })
+
+    $(window).scroll(function(){
+        $(window).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
+    })
 })

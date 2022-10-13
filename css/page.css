@@ -5,7 +5,7 @@
     .contentArea .topArea h2{font-size: 80px; font-weight: 700; line-height: 1.3125; max-width: 1060px; margin: 0 auto 40px;}
     .contentArea .topArea p{margin-bottom: 50px;}
     .contentArea .topArea small{display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px;}
-    .contentArea .topArea a{width: 210px; }
+    .contentArea .topArea a{width: 210px; font-size: 20px; font-weight: 700; color: white; line-height: 55px; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100em;}
 
     /* 첫번째 SVG */
     #mask1{width: 42.9%; position: absolute; left: 35px; top: 105px; z-index: 100;}
@@ -28,7 +28,7 @@
     }
 
     /* 두번째 SVG */
-    #mask2{width: 47.8%; position: absolute; right: -10.9%; top: -6%;}
+    #mask2{width: 47.8%; position: absolute; right: 0; top: 0; transform: translateX(22%) translateY(-27%);}
     .mask2{fill:#fff;}
     [class*='mask2-stroke']{stroke:#892C87;stroke-width:100;stroke-miterlimit:10; animation-duration: 0.5s; animation-fill-mode: forwards;}
     .mask2-stroke1{animation-name: mask2-stroke1; stroke-dasharray:547; stroke-dashoffset:547; animation-delay: 0.6s;}
@@ -50,9 +50,6 @@
     /* 게임 라인 업 */
     .lineArea{ margin: 0 auto; overflow: hidden;}
     .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
-    /* .lineArea > div::before , .lineArea > div::after{content: ''; position: absolute; top: 0; width: 350px; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(21,3,38,1) 75%, rgba(21,3,38,1) 100%); z-index: 10;} */
-    /* .lineArea > div::before{left: 0; transform: rotate(180deg);} */
-    /* .lineArea > div::after{right: 0;} */
     .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
     .lineArea > div .mySwiper{overflow: visible;}
     .lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
@@ -66,30 +63,38 @@
 
     /* GEM & BATTLE */
     .gemArea{position: relative;}
-    .gemArea > *{position: relative; z-index: 1;}
+    .gemArea > *{position: relative; z-index: 10;}
     .gemArea div span{display: block; height: 0.001px; overflow: hidden; text-indent: -9999px; padding-bottom: 34.8305%; background: url('../images/battle-img.png') no-repeat center / cover; }
-    /* .gemArea div img{width: 100%;} */
-    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: linear-gradient(180deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 13%, rgba(71,7,125,1) 45%, rgba(71,7,125,1) 55%, rgba(21,3,38,1) 87%, rgba(21,3,38,1) 100%);/*  background: url('../images/gem-BG.png') no-repeat center / cover; */ z-index: 0;
-        animation-name: gamBG;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-    }
-    @keyframes gamBG {
-        0%{ height: 0;}
-        100%{ height: 940px;}
-    }
+    .gemArea::after{content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 940px; transform: translateY(-50%); background: url('../images/gem-BG.png') no-repeat center / cover; z-index: 0;}
+  
 
     /* NFT */
-    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 80px; box-sizing: border-box; margin-bottom: 80px;}
+    .NFTArea{position: relative;}
+    .NFTArea::after{content: ''; position: absolute; left: 0; top: -123px; width: 100%; height: 1147px; background: url('../images/NFT-background.png') no-repeat center bottom; z-index: 0;}
+    .NFTArea > *{position: relative; z-index: 1;}
+    .NFTArea div{background: url('../images/NFT-BG.png') no-repeat center / 100%; padding: 50px 50px 70px; border-radius: 40px; box-sizing: border-box; margin-bottom: 80px;}
     .NFTArea div ul{display: flex; justify-content: center; margin-bottom: 65px;}
     .NFTArea div ul li{width: 19.25%;}
     .NFTArea div ul li:not(:last-child){margin-right: 0.9375%;}
     .NFTArea div ul li img{width: 100%;}
-    .NFTArea > a{width: 240px;}
+    .NFTArea > a{width: 240px; font-size: 20px; font-weight: 700; color: rgba(0,0,0,0.5); line-height: 55px; text-align: center;  background: #ccc; border-radius: 100em; pointer-events: none;}
+    .NFTArea > a{text-indent: -9999px;}
+    .NFTArea > a::before{text-indent: 0;}
+    .NFTArea > a::before{content: attr(data-before);}
+    .NFTArea > a::after{background-image: url('../images/icon-link-disable.png');}
+    .NFTArea > a[data-minting]{color: white; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); pointer-events: all;}
+    .NFTArea > a[data-minting]::before{content: attr(data-minting); }
+    .NFTArea > a[data-minting]::after{background-image: url('../images/icon-link.png');}
+    .NFTArea > a[data-minting].active{text-indent: 0;}
+    .NFTArea > a[data-minting].active::before{display: none;}
     .NFTArea > a::after{width: 16px; height: 16px; margin-left: 16px;}
     .NFTArea > a:not(:last-of-type){margin-right: 14px;}
 
     /* 로드맵 */
+    .roadArea{position: relative;}
+    .roadArea::after{content: ''; position: absolute; left: 0; top: -150px; width: 100%; height: 1155px; background: url('../images/road-background.png') no-repeat center top; z-index: 0;}
+    .roadArea::before{content: ''; position: absolute; left: 50%; top: -150px; width: 100%; height: 950px; background: url('../images/road-background2.png') no-repeat center top; transform: translateX(-50%); z-index: 1;}
+    .roadArea > *{position: relative; z-index: 10;}
     .roadArea h3{margin-bottom: 135px;}
     .roadArea ol{display: flex; position: relative; text-align: left;}
     .roadArea ol > li input{display: none;}
@@ -110,8 +115,10 @@
     .roadArea ol > li ul li label span{display: block;}
 
     /* FAQ */
+    .FAQArea{position: relative; z-index: 10;}
+    .FAQArea::after{content: ''; position: absolute; left: 50%; bottom: -360px; transform: translateX(-50%); width: 2145px; height: 1034px; background: url('../images/FAQ-BG.png') no-repeat right bottom / 863px;}
     .FAQArea h3{margin-bottom: 80px;}
-    .FAQArea ul{text-align: left;}
+    .FAQArea ul{text-align: left; position: relative; z-index: 10;}
     .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 50px; border-radius: 25px;}
     .FAQArea ul li:not(:last-child){margin-bottom: 25px;}
     .FAQArea ul li button{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 40px 0 40px 40px; font-size: 24px; background: url('../images/icon-Q.png') no-repeat left center / 18px;}
@@ -131,5 +138,15 @@
     .cookieArea > div div button:nth-of-type(1){border: 1px solid white; }
     .cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
     .cookieArea > div div button:not(:last-of-type){margin-right: 13px;}    
+
+    /* 팝업 */
+    .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 1000;}
+    .popupArea > div{width: calc(100% - 50px); max-width: 840px; height: 69.44vh; display: flex; flex-direction: column; position: relative;}
+    .popupArea > div strong{font-size: 24px; line-height: 26px; font-weight: 700; min-height: 105px; background: url('../images/popup-titleBG.png') no-repeat right center / cover; display: flex; justify-content: center; align-items: center; padding: 0 180px 0 30px; border-radius: 30px 30px 0 0;}
+    .popupArea > div > div{ padding: 30px; max-height: calc(100% - 105px);  background-color: white; border-radius: 0 0 30px 30px; box-sizing: border-box;}
+    .popupArea > div > div div{font-size: 15px; font-weight: 400; height: 100%; color: #333333;  overflow: auto;}
+    .popupArea > div > div div::-webkit-scrollbar{width: 5px; }
+    .popupArea > div > div div::-webkit-scrollbar-thumb{background-color: #cccccc; border-radius: 100px;}
+    .popupArea > div button{position: absolute; left: 50%; bottom: -80px; transform: translateX(-50%); width: 50px; height: 50px; background: url('../images/popup-close.png') no-repeat center / cover; text-indent: -9999px;}
 }
 
