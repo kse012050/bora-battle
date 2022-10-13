@@ -1,4 +1,4 @@
-@media screen and (min-width : 800px) {
+@media screen and (min-width : 1201px) {
     /* 최상단 */
     .contentArea{padding: 280px 0 0; position: relative; overflow: hidden;}
     .contentArea .topArea{margin-bottom: 360px; position: relative; z-index: 101;}
@@ -51,15 +51,15 @@
     .lineArea{ margin: 0 auto; overflow: hidden;}
     .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
     .lineArea > div::after{content: ''; position: absolute; left: 50%; top: 0; width: 1920px; height: 100%; transform: translateX(-50%); background: linear-gradient(90deg, rgba(21,3,38,1) 0%, rgba(21,3,38,1) 5%, rgba(21,3,38,0) 15%, rgba(0,0,0,0) 85%, rgba(21,3,38,1) 95%, rgba(21,3,38,1) 100%); z-index: 10; pointer-events: none;}
-    .lineArea > div .mySwiper{overflow: visible;}
-    .lineArea > div .mySwiper :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
-    .lineArea > div .mySwiper .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
-    .lineArea > div .mySwiper .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
-    .lineArea > div .mySwiper .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    .lineArea > div .lineUpSlider{overflow: visible;}
+    .lineArea > div .lineUpSlider :is(.swiper-slide-prev , .swiper-slide-next + .swiper-slide ~ .swiper-slide){opacity: 0.5; transition: opacity 0.5s;}
+    .lineArea > div .lineUpSlider .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
+    .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
+    .lineArea > div .lineUpSlider .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
         /* 실제 비디오가 들어오면 삭제 */
         background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
     }
-    .lineArea > div .mySwiper :is(.swiper-slide-active ,.swiper-slide-next , .swiper-slide-next + .swiper-slide):hover img{opacity: 0; pointer-events: none;}
+    .lineArea > div .lineUpSlider :is(.swiper-slide-active ,.swiper-slide-next , .swiper-slide-next + .swiper-slide):hover img{opacity: 0; pointer-events: none;}
 
     /* GEM & BATTLE */
     .gemArea{position: relative;}

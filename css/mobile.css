@@ -1,4 +1,4 @@
-@media screen and (max-width : 800px) {
+@media screen and (max-width : 1200px) {
     /* 폰트 공통 */
     :is(h2 , h3 , h4) + p{color: rgba(255, 255, 255, 0.5);}
     p span{display: block;}
@@ -18,22 +18,28 @@
 
 
     /* 해더 */
-    header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000;}
+    header{position: fixed; left: 0; top: 0; width: 100%; padding: 30px 0; z-index: 1000; transition: 0.5s background-color;}
     header div{display: flex; justify-content: space-between; align-items: center;}
     header div h1{width: 277px;}
     header div h1 a{display: block;}
     header div h1 a img{width: 100%;}
     header div button{width: 42px;}
-    header div button span{display: block; height: 4px; background-color: white;}
+    header div button span{display: block; height: 4px; background-color: white; transition: 0.5s transform;}
     header div button span:not(:last-child){margin-bottom: 12px;}
-    header div nav{position: fixed; left: 0; right: 0; top: 100px; bottom: 0; display: none; justify-content: center; align-items: center; background-color: black;}
+    header div nav{position: fixed; left: 0; right: 0; top: 100px; bottom: 0; display: flex; justify-content: center; align-items: center; background-color: black; }
+    header div nav ul{text-align: center; width: 100%; height: 100%; padding: 6.25vh 0; box-sizing: border-box; overflow: auto;}
     header div nav ul li:not(:last-child){margin-bottom: 6.25vh;}
-    header div nav ul li a{font-size: 40px; text-transform: uppercase;}
+    header div nav ul li a{font-family: "termina",sans-serif; font-size: 40px; text-transform: uppercase;}
     header div nav ul li a.icon-link::after{width: 32px; height: 32px; margin-left: 20px;}
 
+    header.active{background-color: black;}
+
+    header div button.active span:nth-child(1){transform: translateY(8px) rotate(45deg);}
+    header div button.active span:nth-child(2){transform: translateY(-8px) rotate(-45deg);}
+
     /* 푸터 */
-    footer{line-height: 90px; background-color: black;}
-    footer p{font-size: 14px; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
+    footer{line-height: 120px; background-color: black; text-align: center;}
+    footer p{font-size: 26px; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
 
 
 
@@ -89,11 +95,11 @@
     /* 게임 라인 업 */
     .lineArea{ margin: 0 auto; overflow: hidden;}
     .lineArea > div{max-width: 1920px; margin: 0 auto; position: relative; overflow: hidden;}
-    .lineArea > div .mySwiper{overflow: visible;}
-    .lineArea > div .mySwiper .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
-    .lineArea > div .mySwiper .swiper-slide:not(.swiper-slide-active){opacity: 0.5; transition: opacity 0.5s;}
-    .lineArea > div .mySwiper .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
-    .lineArea > div .mySwiper .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    .lineArea > div .lineUpSlider{overflow: visible;}
+    .lineArea > div .lineUpSlider .swiper-slide{border-radius: 30px; line-height: 0; overflow: hidden;}
+    .lineArea > div .lineUpSlider .swiper-slide:not(.swiper-slide-active){opacity: 0.5; transition: opacity 0.5s;}
+    .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
+    .lineArea > div .lineUpSlider .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
         /* 실제 비디오가 들어오면 삭제 */
         background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
     }
@@ -114,7 +120,7 @@
     }
 
     /* NFT */
-    .NFTArea div{background: url('../images/NFT-MBG.png') no-repeat center / 100%; padding: 55px 35px 95px; box-sizing: border-box; margin-bottom: 80px;}
+    .NFTArea div{background: url('../images/NFT-MBG.png') no-repeat center / 100%; padding: 40px 35px 90px; border-radius: 33px; box-sizing: border-box; margin-bottom: 80px;}
     .NFTArea div ul{display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 80px;}
     .NFTArea div ul li{width: calc((100% - 20px) / 3);}
     .NFTArea div ul li img{width: 100%;}
@@ -125,6 +131,9 @@
 
 
     /* 로드맵 */
+    .roadArea{position: relative;}
+    .roadArea::after{content: ''; position: absolute; left: 0; top: -100px; width: 100%; height: 1993px; background: url('../images/road-Mbackground.png') no-repeat center / cover;}
+    .roadArea > *{position: relative; z-index: 1;}
     .roadArea h3{margin-bottom: 100px;}
     .roadArea ol{position: relative; text-align: left;}
     .roadArea ol > li{position: relative;}
@@ -134,7 +143,7 @@
     .roadArea ol > li > label::before{content: ''; width: 60px; height: 56px; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 36px;}
     .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
     .roadArea ol > li > label{clip-path: polygon(92.85% 0%, 100% 50%, 92.85% 100%, 0% 100%, 6.6% 50%, 0% 0%); padding-left: 80px; box-sizing: border-box;}
-    .roadArea ol > li::after{content: ''; position: absolute; right: 0; top: 0; width: 82px; height: 135px; clip-path: polygon(52.43% 0%, 100% 50%, 52.43% 100%, 0% 100%, 47.56% 50%, 0% 0%);}
+    .roadArea ol > li::after{content: ''; position: absolute; right: 0; top: 0; width: 13.225%; height: 135px; clip-path: polygon(52.43% 0%, 100% 50%, 52.43% 100%, 0% 100%, 47.56% 50%, 0% 0%);}
     .roadArea ol > li:nth-child(1):after{background-color: #e71e9e;}
     .roadArea ol > li:nth-child(2):after{background-color: #e71ecd;}
     .roadArea ol > li:nth-child(3):after{background-color: #e71ecd;}
@@ -145,10 +154,12 @@
     .roadArea ol > li ul li:not(:last-child){margin-bottom: 40px;}
     .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 32px; font-weight: 700; line-height: 40px; color: rgba(255, 255, 255, 0.7); padding-left: 65px; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top; background-size: 40px; }
     .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
-
+ 
     /* FAQ */
+    .FAQArea{position: relative; z-index: 1;}
+    .FAQArea::after{content: ''; position: absolute; right: 0; bottom: -775px; width: 100%; height: 863px; background: url('../images/FAQ-MBG.png') no-repeat right bottom / 536px;}
     .FAQArea h3{margin-bottom: 65px;}
-    .FAQArea ul{text-align: left;}
+    .FAQArea ul{text-align: left; position: relative; z-index: 1;}
     .FAQArea ul li{background-color: #3f0576; border: 1px solid #55009c; padding: 0 45px; border-radius: 25px;}
     .FAQArea ul li:not(:last-child){margin-bottom: 35px;}
     .FAQArea ul li button{width: 100%; height: 215px; display: flex; justify-content: space-between; align-items: center; padding-left: 65px; text-align: left; font-size: 36px; line-height: 42px; background: url('../images/icon-Q.png') no-repeat left center / 37px;}
@@ -157,4 +168,24 @@
     .FAQArea ul li div{display: none; padding: 40px 0 35px; position: relative; }
     .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 60px); height: 1px; background-color: rgba(255, 255, 255, 0.15);}
     .FAQArea ul li div p{font-size: 32px; line-height: 38px; color: rgba(255, 255, 255, 0.7); padding-left: 65px; background: url('../images/icon-A.png') no-repeat left top / 35px;}
+
+    /* 팝업 */
+    .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 1000;}
+    .popupArea > div{width: calc(100% - 50px); max-width: 840px; height: 69.44vh; display: flex; flex-direction: column; position: relative;}
+    .popupArea > div strong{font-size: 24px; line-height: 26px; font-weight: 700; min-height: 105px; background: url('../images/popup-titleBG.png') no-repeat right center / cover; display: flex; justify-content: center; align-items: center; padding: 0 180px 0 30px; border-radius: 30px 30px 0 0;}
+    .popupArea > div > div{ padding: 30px; max-height: calc(100% - 105px);  background-color: white; border-radius: 0 0 30px 30px; box-sizing: border-box;}
+    .popupArea > div > div div{font-size: 15px; font-weight: 400; height: 100%; color: #333333;  overflow: auto;}
+    .popupArea > div > div div::-webkit-scrollbar{width: 5px; }
+    .popupArea > div > div div::-webkit-scrollbar-thumb{background-color: #cccccc; border-radius: 100px;}
+    .popupArea > div button{position: absolute; left: 50%; bottom: -80px; transform: translateX(-50%); width: 50px; height: 50px; background: url('../images/popup-close.png') no-repeat center / cover; text-indent: -9999px;}
+
+    /* 쿠키 */
+    .cookieArea{text-align: left; background-color: rgba(138, 44, 135, 0.8); padding: 60px 0;}
+    .cookieArea > div p{font-size: 28px; line-height: 34px; margin-bottom: 60px;}
+    .cookieArea > div p span mark{font-weight: 700; color: #e71e86; text-decoration: underline;}
+    .cookieArea > div div{display: flex;}
+    .cookieArea > div div button{width: 230px; font-size: 30px; line-height: 85px; text-align: center; border-radius: 100em;}
+    .cookieArea > div div button:nth-of-type(1){border: 1px solid white; }
+    .cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
+    .cookieArea > div div button:not(:last-of-type){margin-right: 25px;} 
 }
