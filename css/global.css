@@ -15,9 +15,58 @@ a , p , small , label , button , strong{font-family: 'Arial';}
 .icon-link{display: inline-flex; justify-content: center; align-items: center;}
 .icon-link::after{content: ''; background-image: url('../images/icon-link.png'); background-repeat: no-repeat; background-position: center; background-size: cover;}
 
+
+/* 모바일 */
+@media screen and (max-width : 850px) {
+    @media screen and (max-width : 720px){
+        html{font-size: 2.2222vw;}
+    }
+    /* 폰트 공통 */
+    :is(h2 , h3 , h4) + p{color: rgba(255, 255, 255, 0.5);}
+    p span{display: block;}
+    h2 + p{font-size: 2.000rem; line-height: 2.375rem;}
+    h3 + p{font-size: 1.875rem; line-height: 2.250rem; margin: 2.500rem 3.125rem 4.688rem;}
+    h4 + p{font-size: 1.750rem; line-height: 2.063rem;}
+    /* 타이틀 크기 */
+    h3{font-size: 2.375rem; font-weight: 700;}
+    h4{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.875rem;}
+
+    /* 켄턴츠 사이 간격 */
+    .contentArea section{margin-bottom: 20.000rem;}
+
+
+
+    /* 해더 */
+    header{position: fixed; left: 0; top: 0; width: 100%; padding: 1.906rem 0; z-index: 1000; transition: 0.5s background-color;}
+    header div{display: flex; justify-content: space-between; align-items: center;}
+    header div h1{width: 17.313rem;}
+    header div h1 a{display: block;}
+    header div h1 a img{width: 100%;}
+    header div button{width: 2.625rem;}
+    header div button span{display: block; height: 0.250rem; background-color: white; transition: 0.5s transform;}
+    header div button span:not(:last-child){margin-bottom: 0.750rem;}
+    header div nav{position: fixed; left: 0; right: 0; top: 6.250rem; bottom: 0; display: none; justify-content: center; align-items: center; background-color: black; }
+    header div nav ul{text-align: center; width: 100%; height: 100%; padding: 6.25vh 0; box-sizing: border-box; overflow: auto;}
+    header div nav ul li:not(:last-child){margin-bottom: 6.25vh;}
+    header div nav ul li a{font-family: "termina",sans-serif; font-size: 2.500rem; text-transform: uppercase;}
+    header div nav ul li a.icon-link::after{width: 2.000rem; height: 2.000rem; margin-left: 1.250rem;}
+    header div nav ul li:hover a{color: #e62285;}
+    header div nav ul li.active a{color: #e62285; font-weight: 700;}
+
+    header.active{background-color: black;}
+
+    header div button.active span:nth-child(1){transform: translateY(0.500rem) rotate(45deg);}
+    header div button.active span:nth-child(2){transform: translateY(-0.500rem) rotate(-45deg);}
+
+    /* 푸터 */
+    footer{line-height: 7.500rem; background-color: black; text-align: center;}
+    footer p{font-size: 1.625rem; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
+}
+
+/* 테블릿 , PC */
 @media screen and (min-width : 851px) {
     @media screen and (max-width : 1280px) {
-        html{font-size: 12px;}
+        html{font-size: calc(1rem - 4px);}
     }
 
     /* 폰트 공통 */
@@ -33,6 +82,7 @@ a , p , small , label , button , strong{font-family: 'Arial';}
     /* 켄턴츠 사이 간격 */
     .contentArea section{margin-bottom: 16.875rem;}
 
+    /* 테블릿 해더 */
     @media screen and (max-width : 1280px) {
          /* 해더 */
         header{position: fixed; left: 0; top: 0; width: 100%; padding: 1.875rem 0; z-index: 1000; transition: 0.5s background-color;}
@@ -61,6 +111,7 @@ a , p , small , label , button , strong{font-family: 'Arial';}
         footer p{font-size: 1.625rem; font-weight: 700; color: rgba(255, 255, 255, 0.2);}
     }
 
+    /* PC 해더 */
     @media screen and (min-width : 1281px) {
         /* 해더 */
         header{position: fixed; left: 0; top: 0; width: 100%; padding: 1.875rem 0; z-index: 1000; transition: 0.5s background-color;}
