@@ -12,9 +12,6 @@
     h3{font-size: 2.375rem; font-weight: 700;}
     h4{font-size: 2.250rem; font-weight: 700; margin-bottom: 1.875rem;}
 
-    /* 컨텐츠 링크 공통 */
-    /* section a{font-weight: 700; color: white; line-height: 5.625rem; text-align: center; background: linear-gradient(180deg, rgba(231,30,134,1) 0%, rgba(138,44,135,1) 100%); border-radius: 100rem;} */
-
     /* 켄턴츠 사이 간격 */
     .contentArea section{margin-bottom: 20.000rem;}
 
@@ -34,6 +31,8 @@
     header div nav ul li:not(:last-child){margin-bottom: 6.25vh;}
     header div nav ul li a{font-family: "termina",sans-serif; font-size: 2.500rem; text-transform: uppercase;}
     header div nav ul li a.icon-link::after{width: 2.000rem; height: 2.000rem; margin-left: 1.250rem;}
+    header div nav ul li:hover a{color: #e62285;}
+    header div nav ul li.active a{color: #e62285; font-weight: 700;}
 
     header.active{background-color: black;}
 
@@ -102,13 +101,14 @@
     .lineArea > div .lineUpSlider .swiper-slide{border-radius: 1.875rem; line-height: 0; overflow: hidden;}
     .lineArea > div .lineUpSlider .swiper-slide:not(.swiper-slide-active , .swiper-slide-next){opacity: 0.5; transition: opacity 0.5s;}
     .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
-    .lineArea > div .lineUpSlider .swiper-slide div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
-        /* 실제 비디오가 들어오면 삭제 */
-        background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
+    .lineArea > div .lineUpSlider .swiper-slide > div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        background-color: black;
     }
-    .lineArea > div .lineUpSlider .swiper-slide div video{width: 100%; height: 100%;}
-    .lineArea > div .lineUpSlider .swiper-slide-active:not(.commingSoon):hover img{opacity: 0; /* pointer-events: none; */}
-    /* .lineArea > div .lineUpSlider .swiper-slide-active:not(.commingSoon).active img{opacity: 0;} */
+    .lineArea > div .lineUpSlider .swiper-slide > div div{position: absolute; left: 0; bottom: 0; padding: 2.188rem 1.875rem; line-height: 1; text-align: left;}
+    .lineArea > div .lineUpSlider .swiper-slide > div div strong{display: block; font-size: 1.250rem; font-weight: 700; margin-bottom: 0.625rem;}
+    .lineArea > div .lineUpSlider .swiper-slide > div div p{font-size: 1.000rem; line-height: 1.188rem; color: rgba(255, 255, 255, 0.7);}
+    .lineArea > div .lineUpSlider .swiper-slide > div video{width: 100%; height: 100%;}
+    .lineArea > div .lineUpSlider .swiper-slide-active:not(.commingSoon):hover img{opacity: 0;}
 
     /* Grem & BATTLE */
     .gemArea{position: relative;}
@@ -149,7 +149,7 @@
     .roadArea ol > li:not(:last-child){margin-bottom: 7.500rem;}
     .roadArea ol > li > label{width: 90.3225%; display: flex; align-items: center; font-size: 2.250rem; font-weight: 700; color: white; line-height: 8.438rem; margin-bottom: 3.125rem;}
     .roadArea ol > li > label::before{content: ''; width: 3.750rem; height: 3.500rem; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 2.250rem;}
-    /* .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');} */
+    .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
     .roadArea ol > li > label{clip-path: polygon(92.85% 0%, 100% 50%, 92.85% 100%, 0% 100%, 6.6% 50%, 0% 0%); padding-left: 5.000rem; box-sizing: border-box;}
     .roadArea ol > li::after{content: ''; position: absolute; right: 0; top: 0; width: 13.225%; height: 8.438rem; clip-path: polygon(52.43% 0%, 100% 50%, 52.43% 100%, 0% 100%, 47.56% 50%, 0% 0%);}
     .roadArea ol > li:nth-child(1):after{background-color: #e71e9e;}
@@ -161,7 +161,7 @@
     .roadArea ol > li ul li{padding-left: 1.250rem;}
     .roadArea ol > li ul li:not(:last-child){margin-bottom: 2.500rem;}
     .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 2.000rem; font-weight: 700; line-height: 2.500rem; color: rgba(255, 255, 255, 0.7); padding-left: 4.063rem; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top; background-size: 2.500rem; }
-    /* .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');} */
+    .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
  
     /* FAQ */
     .FAQArea{position: relative; z-index: 1;}

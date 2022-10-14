@@ -1,20 +1,20 @@
 $(document).ready(function(){
+    // 스크롤
     $(window).scroll(function(){
+        // 해더 배경색
         $(window).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
+
+        // 메뉴 색상
+        menuColor();
     })
 
+    // 리사이즈
     $(window).resize(function(){
+        // 모바일에서 PC로 넘어올 때 메뉴
         if($(window).width() > 1280){
             $('body').removeAttr('style');
             $('header div nav').fadeIn();
         }
-    })
-
-    $('.lineArea > div .lineUpSlider .swiper-slide').hover(function(){
-        $(this).find('video').trigger('play');
-    },function(){
-        $(this).find('video').trigger('pause');
-        $(this).find('video')[0].currentTime = 0;
     })
 
     // 메뉴 클릭 이동
@@ -46,6 +46,17 @@ function menuClickMove(){
     })
 }
 
+function menuColor(){
+    $('[class*="Area"][id]').each(function(i){
+        let headerHeight = $('header').innerHeight();
+        if($(window).scrollTop() > $(this).offset().top - (headerHeight * 2) - 10){
+            $('header div nav ul li').removeClass('active');
+            $('header div nav ul li').eq(i).addClass('active')
+             
+        }
+    })
+}
+
 function lineUpSlider(){
     var lineUpSlider = new Swiper(".lineUpSlider", {
         breakpoints: {
@@ -59,6 +70,14 @@ function lineUpSlider(){
             },
         }
     });
+
+    // 호버 동영상 재생
+    $('.lineArea > div .lineUpSlider .swiper-slide').hover(function(){
+        $(this).find('video').trigger('play');
+    },function(){
+        $(this).find('video').trigger('pause');
+        $(this).find('video')[0].currentTime = 0;
+    })
 }
 
 function FAQClick(){
