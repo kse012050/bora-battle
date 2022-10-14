@@ -106,7 +106,9 @@
         /* 실제 비디오가 들어오면 삭제 */
         background-color: black; line-height: 1; display: flex; justify-content: center; align-items: center;
     }
-    .lineArea > div .mySwiper .swiper-slide-active:hover img{opacity: 0; pointer-events: none;}
+    .lineArea > div .lineUpSlider .swiper-slide div video{width: 100%; height: 100%;}
+    .lineArea > div .lineUpSlider .swiper-slide-active:not(.commingSoon):hover img{opacity: 0; /* pointer-events: none; */}
+    /* .lineArea > div .lineUpSlider .swiper-slide-active:not(.commingSoon).active img{opacity: 0;} */
 
     /* Grem & BATTLE */
     .gemArea{position: relative;}
@@ -122,7 +124,7 @@
     .NFTArea div ul li img{width: 100%;}
     .NFTArea div p span:last-child{margin-top: 2.188rem;}
     .NFTArea > a{width: 18.750rem; font-size: 1.750rem; font-weight: 700; color: rgba(0,0,0,0.5); line-height: 5.625rem; text-align: center;  background: #ccc; border-radius: 100rem; pointer-events: none;}
-    .NFTArea > a{text-indent: -9999px;}
+    .NFTArea > a span{display: none;}
     .NFTArea > a::before{text-indent: 0;}
     .NFTArea > a::before{content: attr(data-before);}
     .NFTArea > a::after{background-image: url('../images/icon-link-disable.png');}
@@ -130,6 +132,7 @@
     .NFTArea > a[data-minting]::before{content: attr(data-minting); }
     .NFTArea > a[data-minting]::after{background-image: url('../images/icon-link.png');}
     .NFTArea > a[data-minting].active{text-indent: 0;}
+    .NFTArea > a[data-minting].active span{display: inline-block;}
     .NFTArea > a[data-minting].active::before{display: none;}
     .NFTArea > a::after{width: 1.500rem; height: 1.500rem; margin-left: 0.625rem;}
     .NFTArea > a:not(:last-of-type){margin-right: 0.875rem;}
@@ -146,7 +149,7 @@
     .roadArea ol > li:not(:last-child){margin-bottom: 7.500rem;}
     .roadArea ol > li > label{width: 90.3225%; display: flex; align-items: center; font-size: 2.250rem; font-weight: 700; color: white; line-height: 8.438rem; margin-bottom: 3.125rem;}
     .roadArea ol > li > label::before{content: ''; width: 3.750rem; height: 3.500rem; background-image: url('../images/icon-chk.png'); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 2.250rem;}
-    .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');}
+    /* .roadArea ol > li > input:checked + label::before{background-image: url('../images/icon-chked.png');} */
     .roadArea ol > li > label{clip-path: polygon(92.85% 0%, 100% 50%, 92.85% 100%, 0% 100%, 6.6% 50%, 0% 0%); padding-left: 5.000rem; box-sizing: border-box;}
     .roadArea ol > li::after{content: ''; position: absolute; right: 0; top: 0; width: 13.225%; height: 8.438rem; clip-path: polygon(52.43% 0%, 100% 50%, 52.43% 100%, 0% 100%, 47.56% 50%, 0% 0%);}
     .roadArea ol > li:nth-child(1):after{background-color: #e71e9e;}
@@ -158,7 +161,7 @@
     .roadArea ol > li ul li{padding-left: 1.250rem;}
     .roadArea ol > li ul li:not(:last-child){margin-bottom: 2.500rem;}
     .roadArea ol > li ul li label{display: block; align-items: flex-start; font-size: 2.000rem; font-weight: 700; line-height: 2.500rem; color: rgba(255, 255, 255, 0.7); padding-left: 4.063rem; background-image: url('../images/icon-chk2.png'); background-repeat: no-repeat; background-position: left top; background-size: 2.500rem; }
-    .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');}
+    /* .roadArea ol > li ul li input:checked + label{background-image: url('../images/icon-chked2.png');} */
  
     /* FAQ */
     .FAQArea{position: relative; z-index: 1;}

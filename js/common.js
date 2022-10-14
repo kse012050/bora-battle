@@ -10,6 +10,13 @@ $(document).ready(function(){
         }
     })
 
+    $('.lineArea > div .lineUpSlider .swiper-slide').hover(function(){
+        $(this).find('video').trigger('play');
+    },function(){
+        $(this).find('video').trigger('pause');
+        $(this).find('video')[0].currentTime = 0;
+    })
+
     // 메뉴 클릭 이동
     menuClickMove();
 
