@@ -17,6 +17,9 @@ $(document).ready(function(){
         }
     })
 
+    // 팝업
+    popupEvent();
+
     // 메뉴 클릭 이동
     menuClickMove();
 
@@ -29,6 +32,15 @@ $(document).ready(function(){
     // 모바일 메뉴 클릭
     mobileMenu();
 })
+
+function popupEvent(){
+    $('body').css('overflow','hidden');
+    $('.popupArea').fadeIn().css('display','flex');
+    $('.popupArea button').click(function(){
+        $('body').removeAttr('style');
+        $('.popupArea').fadeOut();
+    })
+}
 
 function menuClickMove(){
     $('header div nav ul li a').click(function(e){
