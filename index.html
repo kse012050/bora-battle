@@ -25,12 +25,12 @@
                 </button>
                 <nav>
                     <ul>
-                        <li><a href="">borabattle</a></li>
-                        <li><a href="">GAME LINE UP</a></li>
-                        <li><a href="">GEM & BATTLE</a></li>
-                        <li><a href="">NFT</a></li>
-                        <li><a href="">ROADMAP</a></li>
-                        <li><a href="">FAQ</a></li>
+                        <li><a href="#bora">borabattle</a></li>
+                        <li><a href="#lineUp">GAME LINE UP</a></li>
+                        <li><a href="#gem">GEM & BATTLE</a></li>
+                        <li><a href="#NFT">NFT</a></li>
+                        <li><a href="#road">ROADMAP</a></li>
+                        <li><a href="#FAQ">FAQ</a></li>
                         <li><a href="" class="icon-link">discord</a></li>
                         <li><a href="" class="icon-link">WHITE Paper</a></li>
                     </ul>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="contentArea">
+        <div class="contentArea" id="bora">
             <!-- 첫번째 SVG-->
             <svg version="1.1" id="mask1" 
                     y="0px" viewBox="0 0 399.49 463.39" style="enable-background:new 0 0 399.49 463.39;" xml:space="preserve">
@@ -379,7 +379,7 @@
                 <a href="">Android APK</a>
             </section>
 
-            <section class="lineArea">
+            <section class="lineArea" id="lineUp">
                 <h3>GAME LINE UP</h3>
                 <p>All games in one platform Fine your own game</p>
                 <div></div>
@@ -405,19 +405,25 @@
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/lineUP-img03.png" alt="">
+                                <img src="images/lineUP-img04.png" alt="">
                                 <div>
                                     video
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/lineUP-img03.png" alt="">
+                                <img src="images/lineUP-img05.png" alt="">
                                 <div>
                                     video
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/lineUP-img03.png" alt="">
+                                <img src="images/lineUP-img06.png" alt="">
+                                <div>
+                                    video
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/lineUP-commin.png" alt="">
                                 <div>
                                     video
                                 </div>
@@ -427,7 +433,7 @@
                 </div>
             </section>
 
-            <section class="gemArea">
+            <section class="gemArea" id="gem">
                 <h3>GEM & BATTLE</h3>
                 <p>
                     <span>GEM is the currency used in BORABATTLE as an entry fee, </span>
@@ -441,95 +447,93 @@
                 </div>
             </section>
 
-            <div>
-                <section class="NFTArea">
-                    <h3>BORABATTLE NFT</h3>
+            <section class="NFTArea" id="NFT">
+                <h3>BORABATTLE NFT</h3>
+                <p>
+                    <span>BORABATTLE NFT is designed based on pop art style with panda motifs.</span>
+                    <span>The NFT can be used as a PFP within BORABATTLE to show off its unique personality to other players.</span>
+                    <span>The NFT is divided into four grades, Legendary - Epic - Rare - Common.</span>
+                </p>
+                <div class="contentSize">
+                    <ul>
+                        <li><img src="images/NFT-img01.png" alt="NFT imgage"></li>
+                        <li><img src="images/NFT-img02.png" alt="NFT imgage"></li>
+                        <li><img src="images/NFT-img03.png" alt="NFT imgage"></li>
+                        <li><img src="images/NFT-img04.png" alt="NFT imgage"></li>
+                        <li><img src="images/NFT-img05.png" alt="NFT imgage"></li>
+                    </ul>
+                    <h4>NFT HOLDER BENEFITS</h3>
                     <p>
-                        <span>BORABATTLE NFT is designed based on pop art style with panda motifs.</span>
-                        <span>The NFT can be used as a PFP within BORABATTLE to show off its unique personality to other players.</span>
-                        <span>The NFT is divided into four grades, Legendary - Epic - Rare - Common.</span>
+                        <span>The richer premium benefit will be provided with the higher the NFT grade,</span>
+                        <span>and the premium benefits will overlap as acquiring more than one NFT.</span>
+                        <span>Premium benefits will be determined later.</span>
                     </p>
-                    <div class="contentSize">
+                </div>
+                <!-- 
+                    민팅중 : data-minting 속성 추가
+                        두 버튼 다 data-minting="GO TO MINT"
+                    민팅후 : active 클래스 추가
+                    -->
+                <a href="" class="icon-link active" data-minting="GO TO MINT" data-before="COMIN SOON">BORA MaARKET</a>
+                <a href="" class="icon-link" data-before="COMIN SOON">Open Sea</a>
+            </section>
+
+            <section class="roadArea" id="road">
+                <h3>ROADMAP</h3>
+                <ol class="contentSize">
+                    <li>
+                        <input type="checkbox" id="phase1">
+                        <label for="phase1">PHASE 1</label>
                         <ul>
-                            <li><img src="images/NFT-img01.png" alt="NFT imgage"></li>
-                            <li><img src="images/NFT-img02.png" alt="NFT imgage"></li>
-                            <li><img src="images/NFT-img03.png" alt="NFT imgage"></li>
-                            <li><img src="images/NFT-img04.png" alt="NFT imgage"></li>
-                            <li><img src="images/NFT-img05.png" alt="NFT imgage"></li>
+                            <li>
+                                <input type="checkbox" id="communityChannel">
+                                <label for="communityChannel">Official community channel open</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="brandSite">
+                                <label for="brandSite">Brand site open</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="benefitNotice">
+                                <label for="benefitNotice">NFT holder benefit notice</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="NFTMinting">
+                                <label for="NFTMinting">PFP NFT Minting</label>
+                            </li>
                         </ul>
-                        <h4>NFT HOLDER BENEFITS</h3>
-                        <p>
-                            <span>The richer premium benefit will be provided with the higher the NFT grade,</span>
-                            <span>and the premium benefits will overlap as acquiring more than one NFT.</span>
-                            <span>Premium benefits will be determined later.</span>
-                        </p>
-                    </div>
-                    <!-- 
-                        민팅중 : data-minting 속성 추가
-                            두 버튼 다 data-minting="GO TO MINT"
-                        민팅후 : active 클래스 추가
-                     -->
-                    <a href="" class="icon-link active" data-minting="GO TO MINT" data-before="COMIN SOON">BORA MaARKET</a>
-                    <a href="" class="icon-link" data-before="COMIN SOON">Open Sea</a>
-                </section>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="phase2">
+                        <label for="phase2">PHASE 2</label>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="globalRelease">
+                                <label for="globalRelease">
+                                    <span>‘BORABATTLE’</span>
+                                    Global Release
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="phase3">
+                        <label for="phase3">PHASE 3</label>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="gameUpdate">
+                                <label for="gameUpdate">New game update</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="modeUpdate">
+                                <label for="modeUpdate">Battle mode update</label>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
 
-                <section class="roadArea">
-                    <h3>ROADMAP</h3>
-                    <ol class="contentSize">
-                        <li>
-                            <input type="checkbox" id="phase1">
-                            <label for="phase1">PHASE 1</label>
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="communityChannel">
-                                    <label for="communityChannel">Official community channel open</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="brandSite">
-                                    <label for="brandSite">Brand site open</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="benefitNotice">
-                                    <label for="benefitNotice">NFT holder benefit notice</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="NFTMinting">
-                                    <label for="NFTMinting">PFP NFT Minting</label>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="phase2">
-                            <label for="phase2">PHASE 2</label>
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="globalRelease">
-                                    <label for="globalRelease">
-                                        <span>‘BORABATTLE’</span>
-                                        Global Release
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="phase3">
-                            <label for="phase3">PHASE 3</label>
-                            <ul>
-                                <li>
-                                    <input type="checkbox" id="gameUpdate">
-                                    <label for="gameUpdate">New game update</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="modeUpdate">
-                                    <label for="modeUpdate">Battle mode update</label>
-                                </li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-            </div>
-
-            <section class="FAQArea">
+            <section class="FAQArea" id="FAQ">
                 <h3>FAQ</h3>
                 <ul class="contentSize">
                     <li>

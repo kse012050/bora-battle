@@ -3,6 +3,16 @@ $(document).ready(function(){
         $(window).scrollTop() > 0 ? $('header').addClass('active') : $('header').removeClass('active');
     })
 
+    $(window).resize(function(){
+        if($(window).width() > 1280){
+            $('body').removeAttr('style');
+            $('header div nav').fadeIn();
+        }
+    })
+
+    // 메뉴 클릭 이동
+    menuClickMove();
+
     // 라인업 슬라이더
     lineUpSlider();
 
@@ -12,6 +22,22 @@ $(document).ready(function(){
     // 모바일 메뉴 클릭
     mobileMenu();
 })
+
+function menuClickMove(){
+    $('header div nav ul li a').click(function(e){
+        if($(this).attr('href')[0] == '#'){
+            e.preventDefault();
+            let targetID = $($(this)[0].hash);
+            let headerHeight = $('header').innerHeight();
+            let aniDelay = 0;
+            if($('header div button').hasClass('active')){
+                mobileMenuEvent();
+                aniDelay = 400;
+            }
+            $('html').delay(aniDelay).animate({scrollTop : targetID.offset().top - (headerHeight * 2)})
+        }
+    })
+}
 
 function lineUpSlider(){
     var lineUpSlider = new Swiper(".lineUpSlider", {
@@ -37,11 +63,21 @@ function FAQClick(){
 
 function mobileMenu(){
     $('header div button').click(function(){
-        $('header div nav').fadeToggle().css('display' , 'flex');
-        $(this).toggleClass('active');
-        $('header').addClass('active');
-        if(!$(this).hasClass('active') && $(window).scrollTop() <= 0){
-            $('header').removeClass('active');
-        }
+        mobileMenuEvent();
     })
+}
+
+
+function mobileMenuEvent(){
+    $('header div nav').fadeToggle().css('display' , 'flex');
+    $('header div button').toggleClass('active');
+    if($('header div button').hasClass('active')){
+        $('body').css('overflow' , 'hidden');
+    }else{
+        $('body').removeAttr('style');
+    }
+    $('header').addClass('active');
+    if(!$('header div button').hasClass('active') && $(window).scrollTop() <= 0){
+        $('header').removeClass('active');
+    }
 }
