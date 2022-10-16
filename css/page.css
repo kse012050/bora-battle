@@ -133,6 +133,10 @@
     .FAQArea ul li div::before{content: ''; position: absolute; right: 0; top: 0; width: calc(100% - 3.750rem); height: 0.063rem; background-color: rgba(255, 255, 255, 0.15);}
     .FAQArea ul li div p{font-size: 2.000rem; line-height: 2.375rem; color: rgba(255, 255, 255, 0.7); padding-left: 4.063rem; background: url('../images/icon-A.png') no-repeat left top / 2.188rem;}
 
+    /* 도전 */
+    .challengeArea{position: fixed; left: 0; bottom: 0; width: 100%; line-height: 6.563rem; text-align: center; background-color: rgba(0,0,0,0.8); z-index: 10;}
+    .challengeArea p{font-size: 1.563rem; color: #e71e86;}
+
     /* 팝업 */
     .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 1000;}
     .popupArea > div{width: calc(100% - 3.125rem); max-width: 52.500rem; height: 69.44vh; display: flex; flex-direction: column; position: relative;}
@@ -249,6 +253,7 @@
     .NFTArea > a[data-minting].active::before{display: none;}
     .NFTArea > a::after{width: 1.000rem; height: 1.000rem; margin-left: 1.000rem;}
     .NFTArea > a:not(:last-of-type){margin-right: 0.875rem;}
+  
 
     /* 로드맵 */
     .roadArea{position: relative;}
@@ -298,6 +303,10 @@
     .cookieArea > div div button:nth-of-type(1){border: 0.063rem solid white; }
     .cookieArea > div div button:nth-of-type(2){background-color: #e71e86;}
     .cookieArea > div div button:not(:last-of-type){margin-right: 0.813rem;}    
+
+    /* 도전 */
+    .challengeArea{position: fixed; left: 0; bottom: 0; width: 100%; line-height: 6.563rem; text-align: center; background-color: rgba(0,0,0,0.8); z-index: 10;}
+    .challengeArea p{font-size: 1.563rem; color: #e71e86;}
 
     /* 팝업 */
     .popupArea{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 1000;}
