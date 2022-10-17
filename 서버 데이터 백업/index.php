@@ -693,6 +693,13 @@ $main= main();
                 </ul>
             </section>
 
+             <!-- 
+                active 클래스 제거시 화면에서 안보임처리
+             -->
+             <div class="challengeArea active">
+                <p>Whitelist challenge is now AVAILABLE!</p>
+            </div>
+
             <div class="cookieArea" style="display: none">
                 <div class="contentSize">
                     <p>

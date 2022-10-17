@@ -12,6 +12,7 @@ $main= main();
     <!-- Iphone 모바일 확대 방지 -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"> -->
     <title>bora battle</title>
+    <meta property="og:image" content="imgages/preview-img01.png">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -19,6 +20,7 @@ $main= main();
     <script src="js/common.js"></script>
     <script src="admin/assets/js/admin.js"></script>
     <link rel="stylesheet" href="css/import.css">
+    <link rel="icon" href="images/favicon.png">
 </head>
 <body>
     <div class="boraPage">
