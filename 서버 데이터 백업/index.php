@@ -1,3 +1,8 @@
+<?php
+require_once "admin/admin.php";
+insertTrackingLog(array("trackingType"=>100));
+$main= main();
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,11 +17,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="admin/assets/js/admin.js"></script>
     <link rel="stylesheet" href="css/import.css">
 </head>
 <body>
     <div class="boraPage">
-        <header> 
+        <header>
             <div class="contentSize">
                 <h1><a href=""><img src="images/logo.png" alt="bora battle logo"></a></h1>
                 <button>
@@ -31,68 +37,43 @@
                         <li><a href="#NFT">NFT</a></li>
                         <li><a href="#road">ROADMAP</a></li>
                         <li><a href="#FAQ">FAQ</a></li>
-                        <li><a href="" class="icon-link">discord</a></li>
+                        <li>
+                            <?php
+                            $menu7 = $main["menu7"];
+                            $url = getValue($menu7,"move_url");
+                            ?>
+                            <a href="<?=$url?>" class="icon-link" target="_blank">discord</a>
+                        </li>
                         <!-- <li><a href="" class="icon-link">WHITE Paper</a></li> -->
                     </ul>
                 </nav>
             </div> 
         </header>
 
-        <div class="popupArea">
-            <div>
-                <strong>
-                    Change to the Benefits System of COMPETZ NFTs and
-                    Refund Related Information
-                </strong>
+        <?
+        $popup = $main["popup"];
+        if(!is_null($popup)){
+            ?>
+            <div class="popupArea">
                 <div>
+                    <strong>
+                        <?=nl2br(getValue($popup,"subject"))?>
+                    </strong>
                     <div>
-                        We’d like to sincerely apologize to those who have been supporting our COMPETZ platform.<br/>
-                        During our examination of the system which COMPETZ PFPs and Solitaire Skin NFTs (hereby referred to as COMPETZ NFTs) revolve around, we eventually reached the conclusion that we have no other choice but to reform our NFT benefits if we want to ensure that we provide a sustainable and stable service.<br/>
-                        We admit that this change to the benefits system for COMPETZ is significant, and may come as a disappointment to some in our community.<br/>
-                        Listed below are the new COMPETZ NFT benefits as well as refund-related information. Please read through the details to help you determine if you would like to keep or refund your COMPETZ NFT(s).<br/>
-                        <br/>
-                        Benefits Linked to Gameplay:<br/>
-                        - Benefits will now take effect as one progress through the game(s).<br/>
-                        <br/>
-                        Holder Benefits:<br/>
-                        (1) Lost GEM Regeneration<br/>
-                        • When holders play games on the COMPETZ platform and lose GEMs as a result of defeat, a portion of the holders’ losses is regenerated.<br/>
-                        • The proportion of the lost GEMs regenerated is determined by the rarity of that holder’s COMPETZ NFT.<br/>
-                        • If a holder possesses multiple COMPETZ NFTs, the one with the greatest level of rarity is applied.<br/>
-                        • These lost GEMs may be freely recovered the next corresponding month.<br/>
-                        (2) Conversion Fee Discount<br/>
-                        • When converting GEMs into PTZ, holders will receive a discount on the transaction fees.<br/>
-                        • The proportion of the fees discounted will be determined by the rarity of that holder’s COMPETZ NFT.<br/>
-                        • If a holder possesses multiple COMPETZ NFTs, the discount rate for the highest level of rarity is applied.<br/>
-                        * not applicable for Solitaire Skin NFTs<br/>
-                        (3) License for Commercial Use<br/>
-                        Holders will be entitled to use the image of the COMPETZ NFTs for a variety of commercial uses, including the right to manufacture and sell T-shirts, mugs, key chains, etc.<br/>
-                        <br/>
-                        Refund Information:<br/>
-                        Holders may also opt for a refund for the COMPETZ NFTs. Holders will be refunded based on the following criteria:<br/>
-                        <br/>
-                        1) Refund Amount<br/>
-                        The refund amount will be the greater of: (a) the amount paid by the final Holder for the COMPETZ NFTs (“Purchase Price”), and (b) the one-week prior average market price at which the COMPETZ NFTs of the same rarity level was traded (“Average Market Price”), calculated as of the time of this announcement (June 4, 2022 at 20:50pm KST (UTC+9)). For any COMPETZ NFTs with a rarity level fewer than five (5) market transaction histories, the refund amount will be assessed by taking in consideration the price trends of the COMPETZ NFTs of other rarity levels.<br/>
-                        <br/>
-                        2) Note of Caution<br/>
-                        We reiterate that the Purchase Price and the Average Market Price will be calculated based as of time of this announcement, despite the prices of any COMPETZ NFTs traded thereafter. We advise that you suspend any further transaction to prevent confusion in calculating the refund amount.<br/>
-                        <br/>
-                        3) Refund Period<br/>
-                        Our processes for distributing refunds will be set up within two weeks. Request for refunds will be accepted for three months thereafter. A more detailed refund policy and refund schedule will be separately announced.<br/>
-                        If you have any questions, don’t hesitate to contact us at the following address.<br/>
-                        [support@competz.io]<br/>
-                        <br/>
-                        The team behind COMPETZ is devoted to the principle of fair competition.<br/>
-                        Towards that end, the platform will undergo continuous development, and we will not stop until we have achieved our aim of creating an ever more sustainable and stable service that works for everyone.<br/>
-                        We promise to do our best so that our holders do not suffer any negative impact as we go through this transition.<br/>
-                        We apologize once again for any disappointment that this unexpected issue may have caused.<br/>
-                        <br/>
-                        Refund Page: <a href="">https://www.competz.io:20000/Refund/Refund</a>
+                        <div>
+                            <?=nl2br(getValue($popup,"content"))?>
+                        </div>
                     </div>
+                    <button>popup close</button>
                 </div>
-                <button>popup close</button>
             </div>
-        </div>
+            <script>
+                setTimeout(function() { popupEvent() }, 1000);
+            </script>
+            <?
+        }
+        ?>
+
 
         <div class="contentArea" id="bora">
             <!-- 첫번째 SVG-->
@@ -382,6 +363,10 @@
                     <line class="mask2-stroke3" x1="238.04" y1="166.97" x2="378.91" y2="471.87"/>
                 </g>
             </svg>
+
+
+
+
             <section class="topArea contentSize">
                 <h2>
                     <span>Play more, Win more,</span>
@@ -392,7 +377,29 @@
                     <span>Win a full of prizes by winning a battle.</span>
                 </p>
                 <small>DOWNLOAD ON THE </small>
-                <a href="">Android APK</a>
+                <?
+                $menu1 = $main["menu1"];
+                $btn = "";
+                $launching_yn = getValue($menu1,"launching_yn");
+                $apk_url = getValue($menu1,"apk_url");
+                $store_url = getValue($menu1,"store_url");
+                if($launching_yn == 'y' && empty($store_url)){
+                    // 런칭후 , 앱스토어 경로가 없을 경우
+                    $btn_title = "Android APK";
+                    $btn = '<a style="cursor: pointer" class="active" onclick="api(\'apkDownloadForm\')" >Android APK</a>';
+                }else if(empty($launching_yn) || $launching_yn == 'n'){
+                    // 런칭전
+                    $btn = '<a>coming soon</a>';
+                }
+
+                ?>
+
+                <form id="apkDownloadForm" onsubmit="return false">
+                    <input type="hidden" name="url" value="<?=$apk_url?>">
+                </form>
+
+<!--                <a href="">Android APK</a>-->
+                <?=$btn?>
                 <!-- 
                     a 버튼에 active 클래스 추가시 활성화
                  -->
@@ -553,7 +560,7 @@
                         <li><img src="images/NFT-img04.png" alt="NFT imgage"></li>
                         <li><img src="images/NFT-img05.png" alt="NFT imgage"></li>
                     </ul>
-                    <h4>NFT HOLDER BENEFITS</h3>
+                    <h4>NFT HOLDER BENEFITS</h4>
                     <p>
                         <span>The richer premium benefit will be provided with the higher the NFT grade,</span>
                         <span>and the premium benefits will overlap as acquiring more than one NFT.</span>
@@ -565,64 +572,99 @@
                         두 버튼 다 data-minting="GO TO MINT"
                     민팅후 : active 클래스 추가
                     -->
-                <a href="" class="icon-link" data-minting="GO TO MINT" data-before="COMIN SOON"><span>BORA MaARKET</span></a>
-                <a href="" class="icon-link" data-before="COMIN SOON"><span>Open Sea</span></a>
+                <?
+                $menu4 = $main["menu4"];
+                $minting_state = $menu4["minting_state"];
+                $btnHtml = "";
+                if($minting_state == 1){
+                    $btnHtml = '<a class="icon-link" data-before="COMIN SOON"><span></span></a>';
+                }else if($minting_state == 2){
+                    $mint_url = $menu4["mint_url"];
+                    $btnHtml = '<a href="'.$mint_url.'" class="icon-link" data-minting="GO TO MINT" data-before="COMIN SOON" target="_blank"><span></span></a>';
+                }else if($minting_state == 3){
+                    $open_sea_url = $menu4["open_sea_url"];
+                    $bora_market_url = $menu4["bora_market_url"];
+                    $btnHtml = '<a href="'.$bora_market_url.'" class="icon-link" data-minting="BORA MARKET" data-before="COMIN SOON" target="_blank"><span></span></a>';
+                    $btnHtml .= '<a href="'.$open_sea_url.'" class="icon-link" data-minting="Open Sea" data-before="COMIN SOON" target="_blank"><span></span></a>';
+                }
+                ?>
+                <?=$btnHtml?>
+
             </section>
 
             <section class="roadArea" id="road">
-                <h3>ROADMAP</h3>
+                    <h3>ROADMAP</h3>
                 <!-- 
                     input checkbox 에 checked 속성을 넣으면
                     체크 표시 됩니다
                  -->
+                <?php
+                $menu5 = $main["menu5"];
+                $phase1_all_check_frag="";
+                if(getValue($menu5,"phase_1_check_yn_1") =='y' &&
+                    getValue($menu5,"phase_1_check_yn_2") =='y' &&
+                    getValue($menu5,"phase_1_check_yn_3") =='y'&&
+                    getValue($menu5,"phase_1_check_yn_4") =='y'){
+                    $phase1_all_check_frag="checked";
+                }
+                $phase2_all_check_frag="";
+                if(getValue($menu5,"phase_2_check_yn_1") =='y'){
+                    $phase2_all_check_frag="checked";
+                }
+                $phase3_all_check_frag="";
+                if(getValue($menu5,"phase_3_check_yn_1") =='y' &&
+                    getValue($menu5,"phase_3_check_yn_2") =='y'){
+                    $phase3_all_check_frag="checked";
+                }
+
+                ?>
                 <ol class="contentSize">
                     <li>
-                        <input type="checkbox" id="phase1" checked>
+                        <input type="checkbox" id="phase1" <?=$phase1_all_check_frag?>>
                         <label for="">PHASE 1</label>
                         <ul>
-                            <li>
-                                <input type="checkbox" id="communityChannel" checked>
-                                <label for="">Official community channel open</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="brandSite">
-                                <label for="">Brand site open</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="benefitNotice">
-                                <label for="">NFT holder benefit notice</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="NFTMinting">
-                                <label for="">PFP NFT Minting</label>
-                            </li>
+                            <?php
+                            for ($cnt = 0; $cnt < 4; $cnt++) {
+                                ?>
+                                <li>
+                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_1_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                    <label for=""><?= getValue($menu5, "phase_1_title_".($cnt+1)) ?></label>
+                                </li>
+                                <?php
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li>
-                        <input type="checkbox" id="phase2">
+                        <input type="checkbox" id="phase2" <?=$phase2_all_check_frag?>>
                         <label for="">PHASE 2</label>
                         <ul>
-                            <li>
-                                <input type="checkbox" id="globalRelease">
-                                <label for="">
-                                    <span>‘BORABATTLE’</span>
-                                    Global Release
-                                </label>
-                            </li>
+                            <?php
+                            for ($cnt = 0; $cnt < 1; $cnt++) {
+                                ?>
+                                <li>
+                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_2_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                    <label for=""><?= getValue($menu5, "phase_2_title_".($cnt+1)) ?></label>
+                                </li>
+                                <?php
+                            }
+                            ?>
                         </ul>
                     </li>
                     <li>
-                        <input type="checkbox" id="phase3">
+                        <input type="checkbox" id="phase3" <?=$phase3_all_check_frag?>>
                         <label for="">PHASE 3</label>
                         <ul>
-                            <li>
-                                <input type="checkbox" id="gameUpdate">
-                                <label for="">New game update</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="modeUpdate">
-                                <label for="">Battle mode update</label>
-                            </li>
+                            <?php
+                            for ($cnt = 0; $cnt < 2; $cnt++) {
+                                ?>
+                                <li>
+                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_3_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                    <label for=""><?= getValue($menu5, "phase_3_title_".($cnt+1)) ?></label>
+                                </li>
+                                <?php
+                            }
+                            ?>
                         </ul>
                     </li>
                 </ol>
@@ -631,82 +673,27 @@
             <section class="FAQArea" id="FAQ">
                 <h3>FAQ</h3>
                 <ul class="contentSize">
-                    <li>
-                        <button>What is ‘BORABATTLE’?</button>
-                        <div>
-                            <p>
-                                ‘BORABATTLE’ is an eSports platform in which players all around the world can compete and win prize through a
-                                1on1 battle. 
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>What kind of games are available on ‘BORABATTLE’?</button>
-                        <div>
-                            <p>
-                                A Player can choose and play various genres of games such as puzzles, board 
-                                games, racing, and arena battles according suit their taste.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>When can we expect ‘BORABATTLE’ to be released?</button>
-                        <div>
-                            <p>
-                                ‘BORABATTLE’ is being prepared for release within this year, and new game 
-                                lineups will be regularly updated thereafter. A detailed schedule and etc. will be 
-                                revealed through the official community.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>How do we earn prize?</button>
-                        <div>
-                            <p>
-                                Prize can be earned by winning a better record by playing PvP against a 
-                                matched opponent.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>What is ‘GEM’?</button>
-                        <div>
-                            <p>
-                                GEM is the currency used in BORABATTLE as an entry fee, and can be earned by 
-                                winning a battle. GEM can be swapped to tBORA at the BORA portal and vice versa.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>What is BORABATTLE NFT?</button>
-                        <div>
-                            <p>
-                                BORABATTLE NFT is designed based on the pop art style and can be used as a 
-                                PFP within the BORABATTLE. It is divided into four grades, Legendary - Epic - Rare 
-                                - Common, and offers premium benefits within the game.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <button>What are the benefits to NFT holders?</button>
-                        <div>
-                            <p>
-                                Premium benefits will be provided in the game according to the NFT grade, and 
-                                specific premium benefits will be determined later.
-                            </p>
-                        </div>
-                    </li>
+                    <?php
+                    $faqs = $main["faqs"];
+                    if(checkArray($faqs,true)){
+                        foreach ($faqs as $faq){
+                            ?>
+                            <li>
+                                <button><?=nl2br(getValue($faq,"question"))?></button>
+                                <div>
+                                    <p>
+                                        <?=nl2br(getValue($faq,"answer"))?>
+                                    </p>
+                                </div>
+                            </li>
+                            <?php
+                        }
+                    }
+                    ?>
                 </ul>
             </section>
 
-            <!-- 
-                active 클래스 제거시 화면에서 안보임처리
-             -->
-            <div class="challengeArea active">
-                <p>Whitelist challenge is now AVAILABLE!</p>
-            </div>
-
-            <div class="cookieArea">
+            <div class="cookieArea" style="display: none">
                 <div class="contentSize">
                     <p>
                         <span>By clicking 'Accept All', you agree to the storage of cookies to improve our website.</span>

@@ -254,7 +254,6 @@
     .NFTArea > a[data-minting].active::before{display: none;}
     .NFTArea > a::after{width: 1.000rem; height: 1.000rem; margin-left: 1.000rem;}
     .NFTArea > a:not(:last-of-type){margin-right: 0.875rem;}
-  
 
     /* 로드맵 */
     .roadArea{position: relative;}
