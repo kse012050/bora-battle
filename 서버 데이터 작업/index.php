@@ -12,7 +12,11 @@ $main= main();
     <!-- Iphone 모바일 확대 방지 -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"> -->
     <title>bora battle</title>
-    <meta property="og:image" content="imgages/preview-img01.png">
+    <meta property="og:url" content="http://www.borabattle.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BORABATTLE" />
+    <meta property="og:image" content="images/preview-img01.png" />
+    <meta property="og:description" content="An eSports platform in which players all around the world can compete and win prize through a 1on1 battle.">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -699,7 +703,7 @@ $main= main();
                 active 클래스 제거시 화면에서 안보임처리
              -->
              <div class="challengeArea active">
-                <p>Whitelist challenge is now AVAILABLE!</p>
+                <a href="">Whitelist challenge is now AVAILABLE!</a>
             </div>
 
             <div class="cookieArea" style="display: none">
