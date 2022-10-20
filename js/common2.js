@@ -18,7 +18,7 @@ $(document).ready(function(){
     })
 
     // 팝업
-    //popupEvent();
+    popupEvent();
 
     // 메뉴 클릭 이동
     menuClickMove();

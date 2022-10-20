@@ -56,11 +56,11 @@
     .lineArea > div .lineUpSlider{width: 53.47%; margin-left: 3.125rem; overflow: visible;}
     .lineArea > div .lineUpSlider .swiper-slide{border-radius: 1.875rem; line-height: 0; overflow: hidden;}
     .lineArea > div .lineUpSlider .swiper-slide:not(.swiper-slide-active , .swiper-slide-next){opacity: 0.5; transition: opacity 0.5s;}
-    .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
+    .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity;}
     .lineArea > div .lineUpSlider .swiper-slide > div{position: absolute; left: 0; top: 0; width: 100%; height: 100%;
         background-color: black;
     }
-    .lineArea > div .lineUpSlider .swiper-slide > div div{position: absolute; left: 0; bottom: 0; padding: 2.188rem 1.875rem; line-height: 1; text-align: left;}
+    .lineArea > div .lineUpSlider .swiper-slide > div div{position: absolute; left: 0; bottom: 0; padding: 2.188rem 1.875rem; line-height: 1; text-align: left; background-color: rgba(0,0,0,0.5);}
     .lineArea > div .lineUpSlider .swiper-slide > div div strong{display: block; font-size: 1.250rem; font-weight: 700; margin-bottom: 0.625rem;}
     .lineArea > div .lineUpSlider .swiper-slide > div div p{font-size: 1.000rem; line-height: 1.188rem; color: rgba(255, 255, 255, 0.7);}
     .lineArea > div .lineUpSlider .swiper-slide > div video{width: 100%; height: 100%;}
@@ -220,7 +220,7 @@
     .lineArea > div .lineUpSlider .swiper-slide{border-radius: 1.875rem; line-height: 0; overflow: hidden;}
     .lineArea > div .lineUpSlider .swiper-slide img{width: 100%; position: relative; z-index: 1; transition: 0.5s opacity; }
     .lineArea > div .lineUpSlider .swiper-slide > div{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: black;}
-    .lineArea > div .lineUpSlider .swiper-slide > div div{position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; padding: 2.188rem 1.875rem; display: flex; flex-direction: column; justify-content: flex-end; line-height: 1; text-align: left; background-color: rgba(0,0,0,0.2); box-sizing: border-box;}
+    .lineArea > div .lineUpSlider .swiper-slide > div div{position: absolute; left: 0; bottom: 0; width: 100%; /* height: 100%; */ padding: 2.188rem 1.875rem; display: flex; flex-direction: column; justify-content: flex-end; line-height: 1; text-align: left; background-color: rgba(0,0,0,0.5); box-sizing: border-box;}
     .lineArea > div .lineUpSlider .swiper-slide > div div strong{display: block; font-size: 1.250rem; font-weight: 700; margin-bottom: 0.625rem;}
     .lineArea > div .lineUpSlider .swiper-slide > div div p{font-size: 1.000rem; line-height: 1.188rem; color: rgba(255, 255, 255, 0.7);}
     .lineArea > div .lineUpSlider .swiper-slide > div video{width: 100%; height: 100%;}

@@ -389,6 +389,12 @@ $main= main();
                 $launching_yn = getValue($menu1,"launching_yn");
                 $apk_url = getValue($menu1,"apk_url");
                 $store_url = getValue($menu1,"store_url");
+                $banner_yn = getValue($menu1,"banner_yn");
+                $banner_title = getValue($menu1,"banner_title");
+                $banner_url = getValue($menu1,"banner_url");
+                $banner_btn = (!empty($banner_url)) ? 'href="'.$banner_url.'" target="_blank"' : "";
+                $banner_active = ($banner_yn == "y" && !empty($banner_title) ) ? "active" : "";
+
                 if($launching_yn == 'y' && empty($store_url)){
                     // 런칭후 , 앱스토어 경로가 없을 경우
                     $btn_title = "Android APK";
@@ -413,7 +419,7 @@ $main= main();
 
             <section class="lineArea" id="lineUp">
                 <h3>GAME LINE UP</h3>
-                <p>All games in one platform Fine your own game</p>
+                <p>All games in one platform, find your own game</p>
                 <div></div>
                 <div>
                     <div class="swiper lineUpSlider contentSize">
@@ -426,13 +432,19 @@ $main= main();
                                         <strong>10 Dice</strong>
                                         <p>
                                             <span>
-                                                Brain training game to connect the dice and make the sum of 10.
+                                                Brain training game to connect the dice
                                             </span>
                                             <span>
-                                                Make your own strategies with tons of combination from simple 4+6 up to com-
+                                                and make the sum of 10.
                                             </span>
                                             <span>
-                                                plex 3+3+4.
+                                                Make your own strategies with tons of
+                                            </span>
+                                            <span>
+                                                combination from simple 4+6 
+                                            </span>
+                                            <span>
+                                                up to complex 3+3+4.
                                             </span>
                                         </p>
                                     </div>
@@ -449,7 +461,10 @@ $main= main();
                                                 Authentic Klondike Solitaire Game!
                                             </span>
                                             <span>
-                                                A card game to sort the cards from A to K in order.
+                                                A card game to sort the cards 
+                                            </span>
+                                            <span>
+                                                from A to K in order.
                                             </span>
                                             <span>
                                                 Play a fiery brain battle with dynamic fun.
@@ -466,13 +481,16 @@ $main= main();
                                         <strong>Bingo Battle</strong>
                                         <p>
                                             <span>
-                                                Complete Bingo by filling lines in horizontal, vertical, or diagonal with random 
+                                                Complete Bingo by filling lines 
                                             </span>
                                             <span>
-                                                numbers out of 75.
+                                                in horizontal, vertical, or diagonal 
                                             </span>
                                             <span>
-                                                Concentrate and shout out ‘Bingo!’ to win.
+                                                with random numbers out of 75.
+                                            </span>
+                                            <span>
+                                                Concentrate and shout out 'Bing!' to win.
                                             </span>
                                         </p>
                                     </div>
@@ -482,6 +500,23 @@ $main= main();
                                 <img src="images/lineUP-img04.png" alt="">
                                 <div>
                                     <video src="video/lineUP-video04.mp4" muted playsinline></video>
+                                    <div>
+                                        <strong>One Touch Racer</strong>
+                                        <p>
+                                            <span>
+                                                Dynamic off-road racing game with a single touch of control.
+                                            </span>
+                                            <span>
+                                                Be the champion of off-road racing by crossing the line faster than others.
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/lineUP-img05.png" alt="">
+                                <div>
+                                    <video src="video/lineUP-video05.mp4" muted playsinline></video>
                                     <div>
                                         <strong>Speed Match</strong>
                                         <p>
@@ -496,9 +531,9 @@ $main= main();
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="images/lineUP-img05.png" alt="">
+                                <img src="images/lineUP-img06.png" alt="">
                                 <div>
-                                    <video src="video/lineUP-video05.mp4" muted playsinline></video>
+                                    <video src="video/lineUP-video06.mp4" muted playsinline></video>
                                     <div>
                                         <strong>Bumping Doll</strong>
                                         <p>
@@ -507,23 +542,6 @@ $main= main();
                                             </span>
                                             <span>
                                                 Be the last man standing with a simple and easy tap and drag attack.
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="images/lineUP-img06.png" alt="">
-                                <div>
-                                    <video src="video/lineUP-video06.mp4" muted playsinline></video>
-                                    <div>
-                                        <strong>One Touch Racer</strong>
-                                        <p>
-                                            <span>
-                                                Dynamic off-road racing game with a single touch of control.
-                                            </span>
-                                            <span>
-                                                Be the champion of off-road racing by crossing the line faster than others.
                                             </span>
                                         </p>
                                     </div>
@@ -606,22 +624,50 @@ $main= main();
                  -->
                 <?php
                 $menu5 = $main["menu5"];
+
+
                 $phase1_all_check_frag="";
-                if(getValue($menu5,"phase_1_check_yn_1") =='y' &&
-                    getValue($menu5,"phase_1_check_yn_2") =='y' &&
-                    getValue($menu5,"phase_1_check_yn_3") =='y'&&
-                    getValue($menu5,"phase_1_check_yn_4") =='y'){
-                    $phase1_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_1_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_1_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase1_all_check_frag="checked";
+
+
                 $phase2_all_check_frag="";
-                if(getValue($menu5,"phase_2_check_yn_1") =='y'){
-                    $phase2_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_2_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_2_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase2_all_check_frag="checked";
+
+
+
                 $phase3_all_check_frag="";
-                if(getValue($menu5,"phase_3_check_yn_1") =='y' &&
-                    getValue($menu5,"phase_3_check_yn_2") =='y'){
-                    $phase3_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_3_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_3_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase3_all_check_frag="checked";
+
 
                 ?>
                 <ol class="contentSize">
@@ -630,13 +676,17 @@ $main= main();
                         <label for="">PHASE 1</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 4; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_1_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_1_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_1_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_1_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_1_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
+
                             }
                             ?>
                         </ul>
@@ -646,13 +696,17 @@ $main= main();
                         <label for="">PHASE 2</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 1; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_2_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_2_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_2_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_2_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_2_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
+
                             }
                             ?>
                         </ul>
@@ -662,13 +716,16 @@ $main= main();
                         <label for="">PHASE 3</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 2; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_3_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_3_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_3_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_3_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_3_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
                             }
                             ?>
                         </ul>
@@ -702,8 +759,8 @@ $main= main();
              <!-- 
                 active 클래스 제거시 화면에서 안보임처리
              -->
-             <div class="challengeArea active">
-                <a href="">Whitelist challenge is now AVAILABLE!</a>
+             <div class="challengeArea <?=$banner_active?>">
+                <a <?=$banner_btn?>><?=$banner_title?></a>
             </div>
 
             <div class="cookieArea" style="display: none">

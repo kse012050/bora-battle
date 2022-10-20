@@ -12,11 +12,11 @@ $main= main();
     <!-- Iphone 모바일 확대 방지 -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0"> -->
     <title>bora battle</title>
-    <link rel="image_src" href="images/test.png" />
-    <meta property="og:url" content="http://15.165.19.170" />
+    <meta property="og:url" content="http://www.borabattle.io" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="BORA BATTLE" />
+    <meta property="og:title" content="BORABATTLE" />
     <meta property="og:image" content="images/preview-img01.png" />
+    <meta property="og:description" content="An eSports platform in which players all around the world can compete and win prize through a 1on1 battle.">
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -389,6 +389,12 @@ $main= main();
                 $launching_yn = getValue($menu1,"launching_yn");
                 $apk_url = getValue($menu1,"apk_url");
                 $store_url = getValue($menu1,"store_url");
+                $banner_yn = getValue($menu1,"banner_yn");
+                $banner_title = getValue($menu1,"banner_title");
+                $banner_url = getValue($menu1,"banner_url");
+                $banner_btn = (!empty($banner_url)) ? 'href="'.$banner_url.'" target="_blank"' : "";
+                $banner_active = ($banner_yn == "y" && !empty($banner_title) ) ? "active" : "";
+
                 if($launching_yn == 'y' && empty($store_url)){
                     // 런칭후 , 앱스토어 경로가 없을 경우
                     $btn_title = "Android APK";
@@ -606,22 +612,50 @@ $main= main();
                  -->
                 <?php
                 $menu5 = $main["menu5"];
+
+
                 $phase1_all_check_frag="";
-                if(getValue($menu5,"phase_1_check_yn_1") =='y' &&
-                    getValue($menu5,"phase_1_check_yn_2") =='y' &&
-                    getValue($menu5,"phase_1_check_yn_3") =='y'&&
-                    getValue($menu5,"phase_1_check_yn_4") =='y'){
-                    $phase1_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_1_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_1_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase1_all_check_frag="checked";
+
+
                 $phase2_all_check_frag="";
-                if(getValue($menu5,"phase_2_check_yn_1") =='y'){
-                    $phase2_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_2_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_2_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase2_all_check_frag="checked";
+
+
+
                 $phase3_all_check_frag="";
-                if(getValue($menu5,"phase_3_check_yn_1") =='y' &&
-                    getValue($menu5,"phase_3_check_yn_2") =='y'){
-                    $phase3_all_check_frag="checked";
+                $totalCount = 0;
+                $totalChkCount = 0;
+                for ($cnt = 0; $cnt < 5; $cnt++) {
+                    $title = getValue($menu5, "phase_3_title_".($cnt+1));
+                    $check = getValue($menu5, "phase_3_check_yn_".($cnt+1));
+                    if(!empty($title)){
+                        $totalCount++;
+                        if($check == 'y') $totalChkCount++;
+                    }
                 }
+                if($totalCount == $totalChkCount)$phase3_all_check_frag="checked";
+
 
                 ?>
                 <ol class="contentSize">
@@ -630,13 +664,17 @@ $main= main();
                         <label for="">PHASE 1</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 4; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_1_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_1_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_1_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_1_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_1_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
+
                             }
                             ?>
                         </ul>
@@ -646,13 +684,17 @@ $main= main();
                         <label for="">PHASE 2</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 1; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_2_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_2_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_2_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_2_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_2_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
+
                             }
                             ?>
                         </ul>
@@ -662,13 +704,16 @@ $main= main();
                         <label for="">PHASE 3</label>
                         <ul>
                             <?php
-                            for ($cnt = 0; $cnt < 2; $cnt++) {
-                                ?>
-                                <li>
-                                    <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_3_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
-                                    <label for=""><?= getValue($menu5, "phase_3_title_".($cnt+1)) ?></label>
-                                </li>
-                                <?php
+                            for ($cnt = 0; $cnt < 5; $cnt++) {
+                                $title = getValue($menu5, "phase_3_title_".($cnt+1));
+                                if(!empty($title)){
+                                    ?>
+                                    <li>
+                                        <input type="checkbox" id="communityChannel" <?= (getValue($menu5, "phase_3_check_yn_".($cnt+1)) == 'y') ? 'checked' : '' ?>>
+                                        <label for=""><?= getValue($menu5, "phase_3_title_".($cnt+1)) ?></label>
+                                    </li>
+                                    <?php
+                                }
                             }
                             ?>
                         </ul>
@@ -702,8 +747,8 @@ $main= main();
              <!-- 
                 active 클래스 제거시 화면에서 안보임처리
              -->
-             <div class="challengeArea active">
-                <p>Whitelist challenge is now AVAILABLE!</p>
+             <div class="challengeArea <?=$banner_active?>">
+                <a <?=$banner_btn?>><?=$banner_title?></a>
             </div>
 
             <div class="cookieArea" style="display: none">
